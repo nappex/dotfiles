@@ -49,6 +49,7 @@ fi
 if [[ ! -d $PLUGINS_PATH/commands/start/commentary ]]
 then
     git clone https://tpope.io/vim/commentary.git $PLUGINS_PATH/commands/start/commentary
+    vim -u NONE -c "helptags $PLUGINS_PATH/commands/start/commentary" -c q
 fi
 
 # paste register as god, solve problem with copy paste word as yiw -> viw -> p.
