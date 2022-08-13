@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PLUGINS_PATH=~/.vim/pack
+PLUGINS_PATH=$HOME/vim/pack
 
 # statusline
 if [[ ! -d $PLUGINS_PATH/statusline/start/lightline ]]
@@ -8,7 +8,7 @@ then
     git clone https://github.com/itchyny/lightline.vim $PLUGINS_PATH/statusline/start/lightline
 fi
 
-# echo "export TERM=xterm-256color" >> ~/.zshrc
+# echo "export TERM=xterm-256color" >> $HOME/zshrc
 
 # colorschemes, after install set .vimrc with "colorscheme <colorscheme_name>" 
 if [[ ! -d $PLUGINS_PATH/colorschemes/start/landscape ]]
@@ -17,7 +17,7 @@ then
 fi
 
 # git clone https://github.com/tomasr/molokai.git $PLUGINS_PATH/colorschemes/start/molokai
-# echo "colorscheme molokai" >> ~/.vim/vimrc
+# echo "colorscheme molokai" >> $HOME/vim/vimrc
 
 # show gitbranch
 if [[ ! -d $PLUGINS_PATH/gitbranch/start/vim-gitbranch ]]
