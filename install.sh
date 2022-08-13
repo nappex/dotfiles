@@ -5,7 +5,7 @@ PLUGINS_PATH=~/.vim/pack
 # statusline
 git clone https://github.com/itchyny/lightline.vim $PLUGINS_PATH/statusline/start/lightline
 
-echo "export TERM=xterm-256color" >> ~/.zshrc
+# echo "export TERM=xterm-256color" >> ~/.zshrc
 
 # colorschemes, after install set .vimrc with "colorscheme <colorscheme_name>" 
 git clone https://github.com/itchyny/landscape.vim.git $PLUGINS_PATH/colorschemes/start/landscape
