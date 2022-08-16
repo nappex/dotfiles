@@ -20,6 +20,7 @@ inoremap { {}<Esc>i
 inoremap [ []<Esc>i
 inoremap ' ''<Esc>i
 inoremap " ""<Esc>i
+inoremap ` ``<Esc>i
 
 " enable Shift-Tab to move line by Tab back
 " for command mode
