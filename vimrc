@@ -14,6 +14,9 @@ set incsearch
 set clipboard=unnamed
 set scrolloff=10
 set sidescroll=5
+"   eol - end of line, trail - whitespaces at the end
+set listchars=eol:¬,tab:>-,trail:~,extends:>,precedes:<,space:·
+set list
 
 inoremap " ""<left>
 inoremap ' ''<left>
