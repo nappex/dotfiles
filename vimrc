@@ -1,7 +1,7 @@
 set number relativenumber
 set belloff=all
 set encoding=utf-8
-set autoindent 
+set autoindent
 set expandtab
 set tabstop=4
 set softtabstop=4
