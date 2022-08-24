@@ -36,6 +36,13 @@ colorscheme landscape
 
 filetype plugin indent on
 
+"   remove trailing whitespaces by :call TrimWhitespaces()
+fun! TrimWhitespaces()
+    let l:save = winsaveview()
+    keeppatterns %s/\s\+$//e
+    call winrestview(l:save)
+endfun
+
 " Plugins
 
 " statusline lightline
