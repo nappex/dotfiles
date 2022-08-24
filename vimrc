@@ -15,12 +15,12 @@ set clipboard=unnamed
 set scrolloff=10
 set sidescroll=5
 
-inoremap ( ()<Esc>i
-inoremap { {}<Esc>i
-inoremap [ []<Esc>i
-inoremap ' ''<Esc>i
-inoremap " ""<Esc>i
-inoremap ` ``<Esc>i
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap ` ``<left>
 
 " enable Shift-Tab to move line by Tab back
 " for command mode
