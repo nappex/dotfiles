@@ -26,7 +26,7 @@ inoremap ` ``<left>
 " for command mode
 nnoremap <S-Tab> <<
 " for insert mode
-inoremap <S-Tab> <C-d> 
+inoremap <S-Tab> <C-d>
 
 syntax on
 colorscheme landscape
