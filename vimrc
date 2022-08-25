@@ -47,7 +47,7 @@ syntax on
 colorscheme landscape
 
 "   remove trailing whitespaces by :call TrimWhitespaces()
-fun! TrimWhitespaces()
+fun! TrimWhiteSpaces()
     let l:save = winsaveview()
     keeppatterns %s/\s\+$//e
     call winrestview(l:save)
