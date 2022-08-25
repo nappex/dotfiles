@@ -30,10 +30,21 @@ nnoremap <S-Tab> <<
 " for insert mode
 inoremap <S-Tab> <C-d>
 
-syntax on
-colorscheme landscape
+"   Highlight trailing whitespace
+"   https://vim.fandom.com/wiki/Highlight_unwanted_spaces
+"   https://stackoverflow.com/questions/4617059/showing-trailing-spaces-in-vim
+"   https://superuser.com/questions/211916/setting-up-multiple-highlight-rules-in-vim
+"   https://superuser.com/questions/921920/display-trailing-spaces-in-vim
+highlight TrailingWhitespace ctermbg=red guibg=red
+autocmd ColorScheme * highlight TrailingWhitespace ctermbg=red guibg=red
+" Show trailing whitespace regex \s\+$
+call matchadd("TrailingWhitespace", '\s\+$')
+autocmd BufWinEnter * call matchadd("TrailingWhitespace", '\s\+$')
+autocmd BufWinLeave * call clearmatches()
 
 filetype plugin indent on
+syntax on
+colorscheme landscape
 
 "   remove trailing whitespaces by :call TrimWhitespaces()
 fun! TrimWhitespaces()
