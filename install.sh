@@ -10,7 +10,7 @@ fi
 
 # echo "export TERM=xterm-256color" >> $HOME/zshrc
 
-# colorschemes, after install set .vimrc with "colorscheme <colorscheme_name>" 
+# colorschemes, after install set .vimrc with "colorscheme <colorscheme_name>"
 if [[ ! -d $PLUGINS_PATH/colorschemes/start/landscape ]]
 then
     git clone https://github.com/itchyny/landscape.vim.git $PLUGINS_PATH/colorschemes/start/landscape
