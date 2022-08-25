@@ -42,9 +42,9 @@ call matchadd("TrailingWhitespace", '\s\+$')
 autocmd BufWinEnter * call matchadd("TrailingWhitespace", '\s\+$')
 autocmd BufWinLeave * call clearmatches()
 
-filetype plugin indent on
 syntax on
 colorscheme landscape
+filetype plugin indent on
 
 "   remove trailing whitespaces by :call TrimWhitespaces()
 fun! TrimWhiteSpaces()
