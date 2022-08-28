@@ -76,3 +76,10 @@ else
     echo "ReplaceWithRegister already installed"
 fi
 
+if [[ ! -d $PLUGINS_PATH/lang_support/start/vim-elixir ]]
+then
+    git clone https://github.com/elixir-editors/vim-elixir.git ~/.vim/pack/lang_support/start/vim-elixir
+else
+    echo "vim-elixir already installed"
+fi
+

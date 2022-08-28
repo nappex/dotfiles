@@ -1,3 +1,4 @@
+set nocompatible
 set number relativenumber
 set belloff=all
 set encoding=utf-8
@@ -16,6 +17,13 @@ set scrolloff=10
 set sidescroll=5
 set listchars=space:·
 set list
+
+" Enable syntax highlighting
+syntax on
+" Enables filetype detection, loads ftplugin, and loads indent
+" (Not necessary on nvim and may not be necessary on vim 8.2+)
+filetype plugin indent on
+colorscheme landscape
 
 inoremap " ""<left>
 inoremap ' ''<left>
@@ -41,10 +49,6 @@ autocmd ColorScheme * highlight TrailingWhitespace ctermbg=red guibg=red
 call matchadd("TrailingWhitespace", '\s\+$')
 autocmd BufWinEnter * call matchadd("TrailingWhitespace", '\s\+$')
 autocmd BufWinLeave * call clearmatches()
-
-syntax on
-colorscheme landscape
-filetype plugin indent on
 
 "   remove trailing whitespaces by :call TrimWhitespaces()
 fun! TrimWhiteSpaces()
