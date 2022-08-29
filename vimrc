@@ -17,6 +17,13 @@ set scrolloff=10
 set sidescroll=5
 set listchars=space:·
 set list
+"   Search down in to sub-folders
+"   Providse TAB-completion for all file-related tasks
+set path+=**
+
+"   Display all matching files when we TAB complete
+set wildmenu
+
 " Enable syntax highlighting
 syntax on
 " Enables filetype detection, loads ftplugin, and loads indent
