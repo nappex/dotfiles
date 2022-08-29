@@ -17,6 +17,21 @@ set scrolloff=10
 set sidescroll=5
 set listchars=space:·
 set list
+"   to show status line
+set laststatus=2
+
+" statusline created just with vim syntax without external plugin
+set statusline=
+set statusline+=\ [%n] "  Buffer number
+set statusline+=\ %f
+set statusline+=\ [%{gitbranch#name()}]
+set statusline+=\ %m%r%h%w
+set statusline+=%=
+set statusline+=%y
+set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
+set statusline+=\ [%{&fileformat}\]
+set statusline+=\ %l:%c
+set statusline+=\ (%p%%)
 
 " Enable syntax highlighting
 syntax on
