@@ -17,22 +17,6 @@ set scrolloff=10
 set sidescroll=5
 set listchars=space:·
 set list
-"   to show status line
-set laststatus=2
-
-" statusline created just with vim syntax without external plugin
-set statusline=
-set statusline+=\ [%n] "  Buffer number
-set statusline+=\ %f
-set statusline+=\ [%{gitbranch#name()}]
-set statusline+=\ %m%r%h%w
-set statusline+=%=
-set statusline+=%y
-set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
-set statusline+=\ [%{&fileformat}\]
-set statusline+=\ %l:%c
-set statusline+=\ (%p%%)
-
 " Enable syntax highlighting
 syntax on
 " Enables filetype detection, loads ftplugin, and loads indent
@@ -40,6 +24,25 @@ syntax on
 filetype plugin indent on
 set background=dark
 colorscheme PaperColor
+
+" statusline created just with vim syntax without external plugin
+set laststatus=2 "   to show status line
+set statusline=
+set statusline+=%1*\ [%n]                "  Buffer number
+set statusline+=\ %*
+set statusline+=\ %f\ 
+set statusline+=%2*\%m%r%h%w%*
+set statusline+=%=
+set statusline+=%3*\ %{gitbranch#name()}\ %*
+set statusline+=\ %y
+set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
+set statusline+=\ [%{&fileformat}\]
+set statusline+=\ %l:%c
+set statusline+=\ (%p%%)
+
+highlight User1 ctermbg=yellow guibg=yellow ctermfg=black guifg=black
+highlight User2 ctermbg=red guibg=red
+highlight User3 ctermfg=magenta guifg=magenta
 
 inoremap " ""<left>
 inoremap ' ''<left>
