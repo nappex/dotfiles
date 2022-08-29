@@ -40,7 +40,7 @@ set statusline+=\ %*
 set statusline+=\ %f\ 
 set statusline+=%2*\%m%r%h%w%*
 set statusline+=%=
-set statusline+=%3*\ %{gitbranch#name()}\ %*
+set statusline+=%3*%{gitbranch#name()}%*
 set statusline+=\ %y
 set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
 set statusline+=\ [%{&fileformat}\]
@@ -49,7 +49,7 @@ set statusline+=\ (%p%%)
 
 highlight User1 ctermbg=yellow guibg=yellow ctermfg=black guifg=black
 highlight User2 ctermbg=red guibg=red
-highlight User3 ctermfg=magenta guifg=magenta
+highlight User3 ctermbg=lightgreen guibg=lightgreen ctermfg=red guifg=red
 
 inoremap " ""<left>
 inoremap ' ''<left>
