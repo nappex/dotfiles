@@ -23,7 +23,8 @@ syntax on
 " Enables filetype detection, loads ftplugin, and loads indent
 " (Not necessary on nvim and may not be necessary on vim 8.2+)
 filetype plugin indent on
-colorscheme landscape
+set background=dark
+colorscheme PaperColor
 
 inoremap " ""<left>
 inoremap ' ''<left>
