@@ -83,3 +83,13 @@ fun! TrimWhiteSpaces()
     call winrestview(l:save)
 endfun
 
+" SNIPPETS:
+
+" HTML
+" Read an empty HTML template and move cursor to title
+nnoremap ,html :-1read $HOME/.vim/.template.html<CR>6jwf>a
+" HTML tags autocomplete
+"inoremap <lt>/ </<C-x><C-o><Esc>==gi
+"iabbrev </ </<C-x><C-o><Esc><<O
+inoremap <lt>/ <Esc>o<Tab><CR></<C-x><C-o><Up>
+
