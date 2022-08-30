@@ -23,6 +23,7 @@ set path+=**
 
 "   Display all matching files when we TAB complete
 set wildmenu
+set mouse=a
 
 " Enable syntax highlighting
 syntax enable
