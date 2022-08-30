@@ -83,6 +83,16 @@ fun! TrimWhiteSpaces()
     call winrestview(l:save)
 endfun
 
+" FILE BROWSING
+" with built-in netrw
+" let g:netrw_banner=0      " disable annoying top banner
+"let g:netrw_browse_split=4  " open in prior window
+"let g:netrw_preview=1       " open in prior window
+let g:netrw_altv=1          " open splits to the right
+let g:netrw_liststyle=3     " tree view
+let g:netrw_hide=0          " show all files (hidden also)
+let g:netrw_menu=1          " netrw's menu enabled
+
 " SNIPPETS:
 
 " HTML
