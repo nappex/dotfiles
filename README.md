@@ -21,3 +21,15 @@ https://github.com/sheerun/vim-polyglot
 
 There is also plugin `vim-elixir`, but I can not install it.
 
+# Highlight trailing whitespaces
+Highlighting is made by myself. Solution for highlight and remove trailing whitespaces
+by command was created thanks links below:
+
+- https://vim.fandom.com/wiki/Highlight_unwanted_spaces
+- https://stackoverflow.com/questions/4617059/showing-trailing-spaces-in-vim
+- https://superuser.com/questions/211916/setting-up-multiple-highlight-rules-in-vim
+- https://superuser.com/questions/921920/display-trailing-spaces-in-vim
+
+When you want to remove all trailing whitespaces in file invoke in command mode
+`:call TrimWhiteSpaces()`
+
