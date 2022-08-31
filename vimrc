@@ -98,7 +98,13 @@ let g:netrw_menu=1          " netrw's menu enabled
 nnoremap ,html :-1read $HOME/.vim/templates/.template.html<CR>6jwf>a
 
 " HTML tags autocomplete
-"inoremap <lt>/ </<C-x><C-o><Esc>==gi
-"iabbrev </ </<C-x><C-o><Esc><<O
-inoremap <lt>/ <Esc>o<Tab><CR></<C-x><C-o><Up>
+inoremap <lt>/ </<C-x><C-o><Esc>F<i
+
+" The end </ invoke map above, so we combine abbrev with map together
+func Eatchar(pat)
+  let c = nr2char(getchar(0))
+  return (c =~ a:pat) ? '' : c
+endfunc
+
+autocmd Filetype html iabbrev <a <a href=<C-v>"<C-v>"></<C-R>=Eatchar('\s')<CR>
 
