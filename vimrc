@@ -44,9 +44,12 @@ filetype plugin on
 filetype indent on
 
 " COLORS
+" -------------------------------------------------------
 set background=dark
 colorscheme PaperColor
 
+" STATUS LINE
+" -------------------------------------------------------
 " statusline created just with vim syntax without external plugin
 set laststatus=2 "   to show status line
 set statusline=
@@ -66,6 +69,8 @@ highlight User1 ctermbg=yellow guibg=yellow ctermfg=black guifg=black
 highlight User2 ctermbg=red guibg=red
 highlight User3 ctermbg=lightgreen guibg=lightgreen ctermfg=red guifg=red
 
+" MAPPINGS
+" -------------------------------------------------------
 inoremap " ""<left>
 inoremap ' ''<left>
 inoremap ( ()<left>
@@ -80,6 +85,7 @@ nnoremap <S-Tab> <<
 inoremap <S-Tab> <C-d>
 
 " HIGHLIGHT TRAILING WHITESPACES
+" -------------------------------------------------------
 highlight TrailingWhitespace ctermbg=red guibg=red
 autocmd ColorScheme * highlight TrailingWhitespace ctermbg=red guibg=red
 " Show trailing whitespace regex \s\+$
@@ -88,6 +94,7 @@ autocmd BufWinEnter * call matchadd("TrailingWhitespace", '\s\+$')
 autocmd BufWinLeave * call clearmatches()
 
 " REMOVE TRAILING WHITESPACES
+" -------------------------------------------------------
 " :call TrimWhitespaces()
 fun! TrimWhiteSpaces()
     let l:save = winsaveview()
@@ -96,6 +103,7 @@ fun! TrimWhiteSpaces()
 endfun
 
 " FILE BROWSING
+" -------------------------------------------------------
 " with built-in netrw
 " let g:netrw_banner=0      " disable annoying top banner
 "let g:netrw_browse_split=4  " open in prior window
@@ -106,6 +114,7 @@ let g:netrw_hide=0          " show all files (hidden also)
 let g:netrw_menu=1          " netrw's menu enabled
 
 " SNIPPETS:
+" -------------------------------------------------------
 
 " HTML
 " Read an empty HTML template and move cursor to title
