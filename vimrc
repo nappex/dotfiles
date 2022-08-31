@@ -10,7 +10,10 @@ set shiftwidth=4
 set colorcolumn=90
 set encoding=utf-8
 set display=lastline
+" Show partial command you type in the last line of the screen.
 set showcmd
+" Show the mode you are on the last line.
+set showmode
 set incsearch
 set clipboard=unnamed
 set scrolloff=10
@@ -23,13 +26,24 @@ set path+=**
 
 "   Display all matching files when we TAB complete
 set wildmenu
+" There are certain files that we would never want to edit with Vim.
+" Wildmenu will ignore files with these extensions.
+set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
+" Enable mouse using
 set mouse=a
 
 " Enable syntax highlighting
 syntax enable
 " Enables filetype detection, loads ftplugin, and loads indent
 " (Not necessary on nvim and may not be necessary on vim 8.2+)
-filetype plugin indent on
+" Enable type file detection. Vim will be able to try to detect the type of file is use.
+filetype on
+" Enable plugins and load plugin for the detected file type.
+filetype plugin on
+" Load an indent file for the detected file type.
+filetype indent on
+
+" COLORS
 set background=dark
 colorscheme PaperColor
 
