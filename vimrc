@@ -42,7 +42,8 @@ filetype on
 filetype plugin on
 " Load an indent file for the detected file type.
 filetype indent on
-
+autocmd FileType python set omnifunc=python3complete#Complete
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 " COLORS
 " -------------------------------------------------------
 set background=dark
@@ -128,6 +129,6 @@ func Eatchar(pat)
   let c = nr2char(getchar(0))
   return (c =~ a:pat) ? '' : c
 endfunc
-
-autocmd Filetype html iabbrev <a <a href=<C-v>"<C-v>"></<C-R>=Eatchar('\s')<CR>
+" autocomplete for a tag
+autocmd FileType html iabbrev <a <a href=<C-v>"<C-v>"></<C-R>=Eatchar('\s')<CR>
 
