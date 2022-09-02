@@ -33,3 +33,7 @@ by command was created thanks links below:
 When you want to remove all trailing whitespaces in file invoke in command mode
 `:call TrimWhiteSpaces()`
 
+# Requirements
+Vim must be compliled with options +python3 +eval +insert_expand.
+If you want to check if your version is compiled by these, then invoke in shell
+`vim --version` or in vim `:ve`
