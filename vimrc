@@ -15,6 +15,7 @@ set showcmd
 " Show the mode you are on the last line.
 set showmode
 set incsearch
+set hls
 set clipboard=unnamed
 set scrolloff=10
 set sidescroll=5
