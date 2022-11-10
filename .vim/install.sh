@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PLUGINS_PATH=$HOME/.vim/pack
+PLUGINS_PATH=$HOME/dotfiles/.vim/pack
 
 # STATUSLINE
 # if [[ ! -d $PLUGINS_PATH/statusline/start/lightline ]]
