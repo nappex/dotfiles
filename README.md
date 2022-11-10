@@ -11,7 +11,7 @@ You can install all dotfiles by script `install.sh`.
 It may be necessary to make the file executable by:
 
 ```sh
-chmod u+x install.sh
+sudo chmod u+x install.sh
 ```
 
 Installation script take argument for shell, you can install just `zsh` or `bash`. If you
