@@ -10,7 +10,7 @@ You can install all dotfiles by script `install.sh`.
 
 It may be necessary to make the file executable by:
 
-```
+```sh
 chmod u+x install.sh
 ```
 
