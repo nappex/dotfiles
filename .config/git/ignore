@@ -1,0 +1,5 @@
+# File names globally ignored by a user
+
+__venv*__/
+*__pycache__/
+
