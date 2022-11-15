@@ -24,5 +24,15 @@ More information about vim configuration find [here](.vim/README.md)
 
 ## Bash
 
+### Customize Bash prompt
+
+If you'd like to customize prompt you have to change variable PS1.
+
+Links:
+If you'd like to learn how to customize looks of your bash, check links below.
+
+1. https://tynick.com/blog/06-12-2019/how-to-change-your-ps1-bash-prompt-and-add-emojis/
+2. http://jafrog.com/2013/11/23/colors-in-terminal.html
+
 ## Git
 
