@@ -39,3 +39,7 @@ for dotfile in "${DOTFILES[@]}"; do
         echo "New symlink $dst was created."
     fi
 done
+
+
+# INSTALL VIM PLUGINS
+$SCRIPT_DIR_PATH/.vim/install_plugins.sh
