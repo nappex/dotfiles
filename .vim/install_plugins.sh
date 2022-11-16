@@ -1,6 +1,8 @@
 #!/bin/bash
 
-PLUGINS_PATH=$HOME/dotfiles/.vim/pack
+SCRIPT_DIR_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+
+PLUGINS_PATH=$SCRIPT_DIR_PATH/pack
 
 # STATUSLINE
 # if [[ ! -d $PLUGINS_PATH/statusline/start/lightline ]]
