@@ -19,7 +19,7 @@ DOTFILES=(
     ".config/git/ignore"
 )
 
-SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+SCRIPT_DIR_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 
 
 # Create symlinks
@@ -32,10 +32,10 @@ for dotfile in "${DOTFILES[@]}"; do
         # overwriting is done by option -f as force
         echo "$dst already exist!"
         Y_or_N "Do you want to overwrite" \
-            && ln -sf $SCRIPTPATH/$dotfile $dst \
+            && ln -sf $SCRIPT_DIR_PATH/$dotfile $dst \
             && echo "$dst was overwrited as symlink."
     else
-        ln -s $SCRIPTPATH/$dotfile $dst
+        ln -s $SCRIPT_DIR_PATH/$dotfile $dst
         echo "New symlink $dst was created."
     fi
 done
