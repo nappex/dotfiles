@@ -1,3 +1,4 @@
+#!/bin/sh
 
 Y_or_N() {
     printf "%s (y/N): " $1
