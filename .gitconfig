@@ -11,3 +11,6 @@
 	defaultBranch = main
 [merge]
 	conflictstyle = diff3
+[alias]
+	punch = push --force-with-lease
+
