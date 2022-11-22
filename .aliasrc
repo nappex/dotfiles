@@ -5,6 +5,7 @@ alias gb='git branch'
 alias gc='git commit -v'
 alias gcmsg='git commit -m'
 alias gcam='git commit -a -m'
+alias gcan!='git commit -a --amend --no-edit'
 alias gcn!='git commit --no-edit --amend'
 alias gd='git diff'
 alias gf='git fetch'
@@ -30,5 +31,4 @@ alias -g gp='grep --color=auto'
 
 alias -s json=geany
 alias -s py=vim
-
 
