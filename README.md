@@ -28,6 +28,7 @@ If you want to try ZSH without any configuration invoke `zsh -f`, option `-f` me
 
 - Run manual pages `man zshall`
 - Explore [Official guide](https://zsh.sourceforge.io/Guide/zshguide.html)
+- Some settings are nicely described in this [blog](https://thevaluable.dev/zsh-install-configure-mouseless/)
 
 ## Bash
 
