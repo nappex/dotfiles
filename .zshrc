@@ -22,3 +22,8 @@ if [[ -r ~/.aliasrc ]]; then
     . ~/.aliasrc
 fi
 
+# CUSTOMIZE PROMPT
+
+PS1='[%{$fg[green]%}%n%{$reset_color%}@%{$fg[green]%}%m%{$reset_color%}:%{$fg[cyan]%}%~%{$reset_color%}$(git_prompt_info)]
+%# '
+
