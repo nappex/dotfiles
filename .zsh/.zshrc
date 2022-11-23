@@ -1,5 +1,7 @@
 # Zsh Run Commnads file
 
+# OPTIONS
+
 # option multios duplicate streams of file descriptors, if we redirect stdout or
 # stderr we can still pipe these outputs because of their duplication.
 # ls >/dev/null | cat, cat still read the output
