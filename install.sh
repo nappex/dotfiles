@@ -36,8 +36,8 @@ for dotfile in "${DOTFILES[@]}"; do
             && ln -sf $SCRIPT_DIR_PATH/$dotfile $dst \
             && echo "$dst was overwrited as symlink."
     else
-        ln -s $SCRIPT_DIR_PATH/$dotfile $dst
-        echo "New symlink $dst was created."
+        ln -s $SCRIPT_DIR_PATH/$dotfile $dst \
+            && echo "New symlink $dst was created."
     fi
 done
 
