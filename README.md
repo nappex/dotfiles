@@ -22,6 +22,8 @@ More information about vim configuration find [here](.vim/README.md)
 
 ## Zsh
 
+If you want to try ZSH without any configuration invoke `zsh -f`, option `-f` means option NO_RCS.
+
 ## Bash
 
 ### Customize Bash prompt
