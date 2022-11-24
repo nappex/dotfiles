@@ -13,6 +13,7 @@ Y_or_N() {
 
 DOTFILES=(
     ".vim"
+    ".profile"
     ".bashrc"
     ".aliasrc"
     ".gitconfig"
