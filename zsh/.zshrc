@@ -7,9 +7,14 @@
 # ls >/dev/null | cat, cat still read the output
 # MULTIOS is enabled by default
 unsetopt multios
+setopt autocd
 
+bindkey -e
 
-#ALIASES
+# +-------+
+# |ALIASES|
+# +-------+
+
 # Load aliases from file
 # https://zsh.sourceforge.io/Guide/zshguide02.html#l22
 # https://zsh.sourceforge.io/Guide/zshguide03.html#l41
@@ -24,8 +29,29 @@ if [[ -r ~/.aliasrc ]]; then
     . ~/.aliasrc
 fi
 
-# CUSTOMIZE PROMPT
+# +----------------+
+# |CUSTOMIZE PROMPT|
+# +----------------+
 
 PS1='[%{$fg[green]%}%n%{$reset_color%}@%{$fg[green]%}%m%{$reset_color%}:%{$fg[cyan]%}%~%{$reset_color%}$(git_prompt_info)]
 %# '
+
+# The following lines were added by compinstall
+
+zstyle ':completion:*' completer _complete _ignored
+zstyle ':completion:*' expand prefix
+zstyle ':completion:*' squeeze-slashes true
+zstyle :compinstall filename '$ZDOTDIR/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+# +----------------+
+# |COMMANDS HISTORY|
+# +----------------+
+
+HISTFILE=$ZDOTDIR/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
 
