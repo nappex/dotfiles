@@ -42,10 +42,9 @@ for dotfile in "${DOTFILES[@]}"; do
     fi
 done
 
-source $SCRIPT_DIR_PATH/zsh/.zshenv
 ln -s $SCRIPT_DIR_PATH/zsh/.zshenv $HOME/.zshenv
-ln -s $SCRIPT_DIR_PATH/zsh/.zshrc $ZDOTDIR/.zshrc
-echo ZDOTDIR=$ZDOTDIR
+# it is same as ZDOTDIR in .zshenv, dont forget any change to update .zshenv
+ln -s $SCRIPT_DIR_PATH/zsh/.zshrc $CONFIG_HOME/zsh/.zshrc
 
 ln -s $SCRIPT_DIR_PATH/git/ignore $CONFIG_HOME/git/ignore
 
