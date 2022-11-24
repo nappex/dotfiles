@@ -16,7 +16,6 @@ Y_or_N() {
 DOTFILES=(
     ".vim"
     ".profile"
-    ".bashrc"
 )
 
 SCRIPT_DIR_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
@@ -41,6 +40,7 @@ for dotfile in "${DOTFILES[@]}"; do
 done
 
 HOME_DOTFILES=(
+    "bash/.bashrc"
     "zsh/.zshenv"
     "git/.gitconfig"
     "aliases/.aliasrc"
@@ -65,12 +65,12 @@ done
 
 # CONFIG_HOME/zsh = ZDOTDIR in .zshenv, dont forget any change to update .zshenv
 
-CONFIG_DOTFILE=(
+CONFIG_DOTFILES=(
     "zsh/.zshrc"
     "git/ignore"
 )
 
-for dotpath in "${CONFIG_DOTFILE[@]}"; do
+for dotpath in "${CONFIG_DOTFILES[@]}"; do
     dst=$CONFIG_HOME/$dotpath
     if [ -f $dst ]
     then
