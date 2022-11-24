@@ -1,5 +1,8 @@
-# SIMPLE aliases
+# +--------------+
+# |SIMPLE aliases|
+# +--------------+
 
+# GIT
 alias ga='git add'
 alias gb='git branch'
 alias gc='git commit -v'
@@ -22,11 +25,15 @@ alias gss='git status -s'
 alias gst='git status'
 alias gsw='git switch'
 
-# GLOBAL aliases
+# +--------------+
+# |GLOBAL aliases|
+# +--------------+
 
 alias -g gp='grep --color=auto'
 
-# SUFFIX aliases
+# +--------------+
+# |SUFFIX aliases|
+# +--------------+
 
 alias -s json=geany
 alias -s py=vim
