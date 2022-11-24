@@ -42,6 +42,7 @@ for dotfile in "${DOTFILES[@]}"; do
 done
 
 HOME_DOTFILES=(
+    "zsh/.zshenv"
     "git/.gitconfig"
 )
 
@@ -62,6 +63,7 @@ for dotpath in "${HOME_DOTFILES[@]}"; do
     fi
 done
 
+# CONFIG_HOME/zsh = ZDOTDIR in .zshenv, dont forget any change to update .zshenv
 
 CONFIG_DOTFILE=(
     "zsh/.zshrc"
@@ -83,8 +85,6 @@ for dotpath in "${CONFIG_DOTFILE[@]}"; do
     fi
 done
 
-ln -s $SCRIPT_DIR_PATH/zsh/.zshenv $HOME/.zshenv
-# it is same as ZDOTDIR in .zshenv, dont forget any change to update .zshenv
 
 # INSTALL VIM PLUGINS
 $SCRIPT_DIR_PATH/.vim/install_plugins.sh
