@@ -45,8 +45,14 @@ filetype plugin on
 filetype indent on
 autocmd FileType python set omnifunc=python3complete#Complete
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-" COLORS
-" -------------------------------------------------------
+" to handle newer syntax of bash. e.g. $()
+let g:is_posix=1
+
+
+" +------+
+" |COLORS|
+" +------+
+
 set background=dark
 colorscheme PaperColor
 
