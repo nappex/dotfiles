@@ -1,11 +1,12 @@
 # Dotfiles
 
-Portable version of my all dotfiles.
+Portable version of my all dotfiles. So far it handles dotfiles
+for `zsh`, `bash`, `git`, `vim`.
+
 
 ## Installation
 
-You should install all applications which are related dotfiles. So far it handles dotfiles
-for `zsh`, `bash`, `git`, `vim`.
+You should install all applications which are related to dotfiles.
 
 ### DEBIAN/UBUNTU
 
