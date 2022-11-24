@@ -34,6 +34,8 @@ brew update && brew upgrade
 brew install vim zsh bash git
 ```
 
+### Install Script
+
 It just install dotfiles eventually packages needed for purpuse of particular dotfile (e.g. vim).
 
 You can install all dotfiles by script `install.sh`.
