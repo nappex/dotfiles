@@ -13,7 +13,6 @@ Y_or_N() {
 
 DOTFILES=(
     ".vim"
-    ".zshrc"
     ".bashrc"
     ".aliasrc"
     ".gitconfig"
@@ -41,6 +40,10 @@ for dotfile in "${DOTFILES[@]}"; do
     fi
 done
 
+source $SCRIPT_DIR_PATH/zsh/.zshenv
+ln -s $SCRIPT_DIR_PATH/zsh/.zshenv $HOME/.zshenv
+ln -s $SCRIPT_DIR_PATH/zsh/.zshrc $ZDOTDIR/.zshrc
+echo ZDOTDIR=$ZDOTDIR
 
 # INSTALL VIM PLUGINS
 $SCRIPT_DIR_PATH/.vim/install_plugins.sh
