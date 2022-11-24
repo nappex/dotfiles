@@ -8,7 +8,7 @@ for `zsh`, `bash`, `git`, `vim`.
 
 You should install all applications which are related to dotfiles.
 
-### DEBIAN/UBUNTU
+### Debian/Ubuntu
 
 ```
 sudo apt update && sudo apt upgrade
