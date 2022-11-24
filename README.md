@@ -24,6 +24,12 @@ More information about vim configuration find [here](.vim/README.md)
 
 If you want to try ZSH without any configuration invoke `zsh -f`, option `-f` means option NO_RCS.
 
+### Where to find information
+
+- Run manual pages `man zshall`
+- Explore [Official guide](https://zsh.sourceforge.io/Guide/zshguide.html)
+- Some settings are nicely described in this [blog](https://thevaluable.dev/zsh-install-configure-mouseless/)
+
 ## Bash
 
 ### Customize Bash prompt

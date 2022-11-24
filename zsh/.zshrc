@@ -1,5 +1,7 @@
 # Zsh Run Commnads file
 
+# OPTIONS
+
 # option multios duplicate streams of file descriptors, if we redirect stdout or
 # stderr we can still pipe these outputs because of their duplication.
 # ls >/dev/null | cat, cat still read the output
@@ -21,4 +23,9 @@ unsetopt multios
 if [[ -r ~/.aliasrc ]]; then
     . ~/.aliasrc
 fi
+
+# CUSTOMIZE PROMPT
+
+PS1='[%{$fg[green]%}%n%{$reset_color%}@%{$fg[green]%}%m%{$reset_color%}:%{$fg[cyan]%}%~%{$reset_color%}$(git_prompt_info)]
+%# '
 
