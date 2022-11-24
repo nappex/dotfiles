@@ -4,9 +4,39 @@ Portable version of my all dotfiles.
 
 ## Installation
 
+You should install all applications which are related dotfiles. So far it handles dotfiles
+for `zsh`, `bash`, `git`, `vim`.
+
+### DEBIAN/UBUNTU
+```
+sudo apt update && sudo apt upgrade
+sudo apt install vim-gtk zsh bash git
+```
+
+### Arch
+```
+sudo pacman -Syu
+sudo pacman -S vim zsh bash git
+```
+Vim is without support of GTK/X, e.g. `+clipboard` is missing.
+If you want `vim` with support GTK/X, you have to instal `gvim`. Unfortunately all dotfiles
+are written for `vim` so you will have to tweak some files to update for `gvim`.
+
+Check [Arch documentation](https://wiki.archlinux.org/title/Vim#Installation)
+
+### macOS (with brew)
+```
+brew update && brew upgrade
+brew install vim zsh bash git
+```
+
 It just install dotfiles eventually packages needed for purpuse of particular dotfile (e.g. vim).
 
 You can install all dotfiles by script `install.sh`.
+
+```sh
+./install.sh
+```
 
 It may be necessary to make the file executable by:
 
