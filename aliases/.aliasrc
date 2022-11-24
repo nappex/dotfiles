@@ -21,7 +21,6 @@ alias grs='git restore'
 alias gss='git status -s'
 alias gst='git status'
 alias gsw='git switch'
-alias doUpdate='sudo apt update && sudo apt upgrade'
 
 # GLOBAL aliases
 
