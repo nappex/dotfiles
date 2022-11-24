@@ -1,6 +1,11 @@
 # Contain user’s environment variables
 
-export ZDOTDIR="$HOME/.zsh"
+if [ ! $XDG_CONFIG_HOME ]; then
+    export ZDOTDIR="$HOME/.config/zsh"
+else
+    export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+fi
+
 
 export HISTFILE="$ZDOTDIR/.histfile"    # History filepath
 export HISTSIZE=1000                    # Maximum events for internal history
