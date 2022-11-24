@@ -42,11 +42,28 @@ for dotfile in "${DOTFILES[@]}"; do
     fi
 done
 
+CONFIG_DOTFILE=(
+    "zsh/.zshrc"
+    "git/ignore"
+)
+
+for dotpath in "${CONFIG_DOTFILE[@]}"; do
+    dst=$CONFIG_HOME/$dotpath
+    if [ -f $dst ]
+    then
+        # overwriting is done by option -f as force
+        echo "$dst already exist!"
+        Y_or_N "Do you want to overwrite" \
+            && ln -sf $SCRIPT_DIR_PATH/$dotpath $dst \
+            && echo "$dst was overwrited as symlink."
+    else
+        ln -s $SCRIPT_DIR_PATH/$dotpath $dst \
+            && echo "New symlink $dst was created."
+    fi
+done
+
 ln -s $SCRIPT_DIR_PATH/zsh/.zshenv $HOME/.zshenv
 # it is same as ZDOTDIR in .zshenv, dont forget any change to update .zshenv
-ln -s $SCRIPT_DIR_PATH/zsh/.zshrc $CONFIG_HOME/zsh/.zshrc
-
-ln -s $SCRIPT_DIR_PATH/git/ignore $CONFIG_HOME/git/ignore
 
 # INSTALL VIM PLUGINS
 $SCRIPT_DIR_PATH/.vim/install_plugins.sh
