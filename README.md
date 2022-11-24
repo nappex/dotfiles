@@ -8,12 +8,14 @@ You should install all applications which are related dotfiles. So far it handle
 for `zsh`, `bash`, `git`, `vim`.
 
 ### DEBIAN/UBUNTU
+
 ```
 sudo apt update && sudo apt upgrade
 sudo apt install vim-gtk zsh bash git
 ```
 
 ### Arch
+
 ```
 sudo pacman -Syu
 sudo pacman -S vim zsh bash git
@@ -25,6 +27,7 @@ are written for `vim` so you will have to tweak some files to update for `gvim`.
 Check [Arch documentation](https://wiki.archlinux.org/title/Vim#Installation)
 
 ### macOS (with brew)
+
 ```
 brew update && brew upgrade
 brew install vim zsh bash git
