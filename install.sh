@@ -18,7 +18,6 @@ DOTFILES=(
     ".profile"
     ".bashrc"
     ".aliasrc"
-    ".gitconfig"
 )
 
 SCRIPT_DIR_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
@@ -41,6 +40,28 @@ for dotfile in "${DOTFILES[@]}"; do
             && echo "New symlink $dst was created."
     fi
 done
+
+HOME_DOTFILES=(
+    "git/.gitconfig"
+)
+
+for dotpath in "${HOME_DOTFILES[@]}"; do
+    dotfile="$(cut -d '/' -f 2 <<<"$dotpath")"
+    dst=$HOME/"$dotfile"
+    if [ -f $dst ]
+    then
+        # Overwrite existing dotfile to symlink?
+        # overwriting is done by option -f as force
+        echo "$dst already exist!"
+        Y_or_N "Do you want to overwrite" \
+            && ln -sf $SCRIPT_DIR_PATH/$dotpath $dst \
+            && echo "$dst was overwrited as symlink."
+    else
+        ln -s $SCRIPT_DIR_PATH/$dotpath $dst \
+            && echo "New symlink $dst was created."
+    fi
+done
+
 
 CONFIG_DOTFILE=(
     "zsh/.zshrc"
