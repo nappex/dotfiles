@@ -26,7 +26,7 @@ for dotfile in "${DOTFILES[@]}"; do
     dst=$HOME/$dotfile
     # Overwrite existing dotfile to symlink?
     # overwriting is done by option -Fh as force
-    ln -sFhiv $SCRIPT_DIR_PATH/$dotfile $dst
+    ln -sFniv $SCRIPT_DIR_PATH/$dotfile $dst
 done
 
 HOME_DOTFILES=(
@@ -41,7 +41,7 @@ for dotpath in "${HOME_DOTFILES[@]}"; do
     dst=$HOME/"$dotfile"
     # Overwrite existing dotfile to symlink?
     # overwriting is done by option -Fh as force
-    ln -sFhiv $SCRIPT_DIR_PATH/$dotpath $dst
+    ln -sFniv $SCRIPT_DIR_PATH/$dotpath $dst
 done
 
 # CONFIG_HOME/zsh = ZDOTDIR in .zshenv, dont forget any change to update .zshenv
@@ -53,8 +53,9 @@ CONFIG_DOTFILES=(
 
 for dotpath in "${CONFIG_DOTFILES[@]}"; do
     dst=$CONFIG_HOME/$dotpath
+    # if dir not exists create it!!!!
     # overwriting is done by option -Fh as force
-    ln -sFhiv $SCRIPT_DIR_PATH/$dotpath $dst
+    ln -sFniv $SCRIPT_DIR_PATH/$dotpath $dst
 done
 
 
