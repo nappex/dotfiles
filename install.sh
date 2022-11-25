@@ -53,9 +53,9 @@ CONFIG_DOTFILES=(
 
 for dotpath in "${CONFIG_DOTFILES[@]}"; do
     dst=$CONFIG_HOME/$dotpath
-    # if dir not exists create it!!!!
+    path=$CONFIG_HOME/"$(sed -e's:[^/]*$::' <<<"$dotpath")"
     # overwriting is done by option -Fh as force
-    ln -sFniv $SCRIPT_DIR_PATH/$dotpath $dst
+    mkdir -vp "$path" && ln -sFniv $SCRIPT_DIR_PATH/$dotpath $dst
 done
 
 
