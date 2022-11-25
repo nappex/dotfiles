@@ -33,8 +33,12 @@ fi
 # |CUSTOMIZE PROMPT|
 # +----------------+
 
-PS1='[%{$fg[green]%}%n%{$reset_color%}@%{$fg[green]%}%m%{$reset_color%}:%{$fg[cyan]%}%~%{$reset_color%}$(git_prompt_info)]
-%# '
+#autoload -Uz vcs_info # enable vcs_info
+#precmd () { vcs_info } # always load before displaying the prompt
+#zstyle ':vcs_info:*' formats ' %s(%F{red}%b%f)' # git(main)
+#$vcs_info_msg_0_
+
+PS1='[%F{green}%n%f@%F{green}%m%f:%F{cyan}%~%f] %# '
 
 # The following lines were added by compinstall
 
