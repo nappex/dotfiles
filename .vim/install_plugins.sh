@@ -18,26 +18,34 @@ PLUGINS_PATH=$SCRIPT_DIR_PATH/pack
 # .vimrc file
 # set "colorscheme <colorscheme_name>"
 # set background=dark/ligt
+
+# +-----------------------+
+# |INSTALLATION OF PLUGINS|
+# +-----------------------+
+
 if [[ ! -d $PLUGINS_PATH/colors/start/papercolor-theme ]]
 then
-    git clone https://github.com/NLKNguyen/papercolor-theme.git ~/.vim/pack/colors/start/papercolor-theme
+    git clone https://github.com/NLKNguyen/papercolor-theme.git ~/.vim/pack/colors/start/papercolor-theme \
+        && echo "Vim plugin -> 'papercolor-theme' installed"
 else
-    echo "papercolor-theme already installed"
+    echo "Vim plugin -> 'papercolor-theme' already installed"
 fi
 
 # GIT-BRANCH
 if [[ ! -d $PLUGINS_PATH/gitbranch/start/vim-gitbranch ]]
 then
-    git clone https://github.com/itchyny/vim-gitbranch $PLUGINS_PATH/gitbranch/start/vim-gitbranch
+    git clone https://github.com/itchyny/vim-gitbranch $PLUGINS_PATH/gitbranch/start/vim-gitbranch \
+        && echo "Vim plugin -> 'vim-gitbranch' installed"
 else
-    echo "vim-gitbranch already installed"
+    echo "Vim plugin -> 'vim-gitbranch' already installed"
 fi
 
 # SYNTAX HIGHLIGHTS
 if [[ ! -d $PLUGINS_PATH/hls-syntax/start/vim-polyglot ]]
 then
-    git clone --depth 1 https://github.com/sheerun/vim-polyglot ~/.vim/pack/hls-syntax/start/vim-polyglot
+    git clone --depth 1 https://github.com/sheerun/vim-polyglot ~/.vim/pack/hls-syntax/start/vim-polyglot \
+        && echo "Vim plugin -> 'vim-polyglot' installed"
 else
-    echo "vim-polyglot already installed"
+    echo "Vim plugin -> 'vim-polyglot' already installed"
 fi
 
