@@ -60,6 +60,12 @@ More information about vim configuration find [here](.vim/README.md)
 
 If you want to try ZSH without any configuration invoke `zsh -f`, option `-f` means option NO_RCS.
 
+### Version control system
+
+If you want to load information from version control system, e.g. git, you can use tool in zsh called `vcs_info`.
+
+For more information how to get vcs info and customize the return value for purpose of prompt you can check [offical docs](https://zsh.sourceforge.io/Doc/Release/User-Contributions.html#Version-Control-Information)
+
 ### Where to find information
 
 - Run manual pages `man zshall`
