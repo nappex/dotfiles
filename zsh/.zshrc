@@ -33,14 +33,21 @@ fi
 # |CUSTOMIZE PROMPT|
 # +----------------+
 
+setopt prompt_subst # If set, parameter expansion, command substitution and arithmetic expansion are performed in prompts
 autoload -Uz vcs_info # enable vcs_info (version control system - info)
+zstyle ':vcs_info:*' enable git
 # :vcs_info:vcs-string:user-context:repo-root-name -> format from documentation
 zstyle ':vcs_info:git:*' formats ' %F{yellow}λ:%f%F{magenta}%b%f' # set the style (look) of vcs_info, it should be λ:main
-precmd () { vcs_info } # always load before displaying the prompt
+zstyle ':vcs_info:git:*' use-simple true
+zstyle ':vcs_info:*+*:*' debug false # If you need debug behaviour of vcs_info switch to true
+precmd () {
+    vcs_info
+    NEWLINE=$'\n'
+    RPS1='${vcs_info_msg_0_}'
+    PS1='%F{green}%n%f@%F{green}%m%f:%F{cyan}%~%f${NEWLINE}%# '
+} # always load before displaying the prompt
 #${vcs_info_msg_0_} print this var you will get the result
-setopt PROMPT_SUBST # If set, parameter expansion, command substitution and arithmetic expansion are performed in prompts
 
-PS1='[%F{green}%n%f@%F{green}%m%f:%F{cyan}%~%f${vcs_info_msg_0_}]%# '
 
 # The following lines were added by compinstall
 
