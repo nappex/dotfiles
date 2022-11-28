@@ -64,6 +64,9 @@ If you want to try ZSH without any configuration invoke `zsh -f`, option `-f` me
 
 If you want to load information from version control system, e.g. git, you can use tool in zsh called `vcs_info`.
 
+Sometimes you may receive an error to use `vcs_info`. Try to check or install package `zsh-vcs`,
+e.g. for Alpine Linux `apk add zsh-vcs`.
+
 For more information how to get vcs info and customize the return value for purpose of prompt you can check [offical docs](https://zsh.sourceforge.io/Doc/Release/User-Contributions.html#Version-Control-Information)
 
 ### Where to find information
