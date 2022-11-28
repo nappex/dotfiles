@@ -43,8 +43,8 @@ zstyle ':vcs_info:*+*:*' debug false # If you need debug behaviour of vcs_info s
 precmd () {
     vcs_info
     NEWLINE=$'\n'
-    RPS1='${vcs_info_msg_0_}'
-    PS1='%F{green}%n%f@%F{green}%m%f:%F{cyan}%~%f${NEWLINE}%# '
+    # RPS1='${vcs_info_msg_0_}' # right side of prompt
+    PS1='%F{green}%n%f@%F{green}%m%f:%F{cyan}%~%f${vcs_info_msg_0_}${NEWLINE}%# '
 } # always load before displaying the prompt
 #${vcs_info_msg_0_} print this var you will get the result
 
