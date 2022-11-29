@@ -69,6 +69,10 @@ e.g. for Alpine Linux `apk add zsh-vcs`.
 
 For more information how to get vcs info and customize the return value for purpose of prompt you can check [offical docs](https://zsh.sourceforge.io/Doc/Release/User-Contributions.html#Version-Control-Information)
 
+### HomeBrew
+
+Path to homebrew is added by default in file `$ZDOTDIR/.zprofile`. If you want to disable just comment it or delete the line in the file.
+
 ### Where to find information
 
 - Run manual pages `man zshall`
