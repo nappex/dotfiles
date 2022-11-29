@@ -8,7 +8,7 @@ if [ -f ~/.aliasrc ]; then
 fi
 
 parse_git_branch() {
-     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/⛕ \1/'
+     git branch --show-current 2> /dev/null
 }
 
-export PS1="\[\e[92m\]\u@\h \[\e[96m\]\w \[\e[31m\]\$(parse_git_branch)\[\e[00m\]\n$ "
+export PS1="\[\e[92m\]\u@\h \[\e[96m\]\w \[\e[31m\] λ:\$(parse_git_branch)\[\e[00m\]\n$ "
