@@ -33,6 +33,16 @@ fi
 # |CUSTOMIZE PROMPT|
 # +----------------+
 
+prompt_git_status () {
+    local NOT_COMMITED=$( git status --porcelain 2>/dev/null )
+    if [ -z ${NOT_COMMITED} ]
+    then
+        STATUS=""
+    else
+        STATUS="*"
+    fi
+}
+
 setopt prompt_subst # If set, parameter expansion, command substitution and arithmetic expansion are performed in prompts
 autoload -Uz vcs_info # enable vcs_info (version control system - info)
 zstyle ':vcs_info:*' enable git
@@ -42,9 +52,10 @@ zstyle ':vcs_info:git:*' use-simple true
 zstyle ':vcs_info:*+*:*' debug false # If you need debug behaviour of vcs_info switch to true
 precmd () {
     vcs_info
+    prompt_git_status
     NEWLINE=$'\n'
     # RPS1='${vcs_info_msg_0_}' # right side of prompt
-    PS1='%F{green}%n%f@%F{green}%m%f:%F{cyan}%~%f${vcs_info_msg_0_}${NEWLINE}%# '
+    PS1='%F{green}%n%f@%F{green}%m%f:%F{cyan}%~%f${vcs_info_msg_0_}${STATUS}${NEWLINE}%# '
 } # always load before displaying the prompt
 #${vcs_info_msg_0_} print this var you will get the result
 
