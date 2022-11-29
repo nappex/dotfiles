@@ -48,6 +48,7 @@ done
 
 CONFIG_DOTFILES=(
     "zsh/.zshrc"
+    "zsh/.zprofile"
     "git/ignore"
 )
 
