@@ -53,12 +53,13 @@ zstyle ':vcs_info:*+*:*' debug false # If you need debug behaviour of vcs_info s
 precmd () {
     vcs_info
     prompt_git_status
-    NEWLINE=$'\n'
-    # RPS1='${vcs_info_msg_0_}' # right side of prompt
-    PS1='%F{green}%n%f@%F{green}%m%f:%F{cyan}%~%f${vcs_info_msg_0_}${STATUS}${NEWLINE}%# '
 } # always load before displaying the prompt
 #${vcs_info_msg_0_} print this var you will get the result
 
+
+NEWLINE=$'\n'
+# RPS1='${vcs_info_msg_0_}' # right side of prompt
+PS1='%F{green}%n%f@%F{green}%m%f:%F{cyan}%~%f${vcs_info_msg_0_}${STATUS}${NEWLINE}%# '
 
 # The following lines were added by compinstall
 
