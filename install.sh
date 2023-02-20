@@ -6,6 +6,7 @@
 # option -f is used to create link on already exist file or dir.
 
 
+# FUNCTIONS
 Y_or_N() {
     printf "%s (y/N): " "$1"
     read answer
@@ -17,11 +18,7 @@ Y_or_N() {
     fi
 }
 
-DOTFILES=(
-    ".vim"
-    ".profile"
-)
-
+# CONSTANTS
 SCRIPT_DIR_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 
 # Create symlinks
