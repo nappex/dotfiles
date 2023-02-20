@@ -50,6 +50,13 @@ It may be necessary to make the file executable by:
 sudo chmod u+x install.sh
 ```
 
+Installing process create symlinks of dotfiles to your system. If file or directory already exist you will be prompt if are you sure to overwrite existing one.
+Creating symlinks with option -F, -i and -v cannot be used because of problem with compatibility. Script is not portable then.
+Options -h resp. -n should not be used because of problematic compatibility, said by manual page. 
+I used -f option to solve problem with existing link or file.
+It will create soft links because hard link can not be done on directory.
+
+
 Installation script take argument for shell, you can install just `zsh` or `bash`. If you
 don't specify both of them will be installed.
 
