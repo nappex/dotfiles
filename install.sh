@@ -1,6 +1,10 @@
 #!/bin/sh
 
-CONFIG_HOME=$HOME/.config
+# README
+# option -s for soft link is used to be able to create link
+# to directory. Hard link invoke an error in case of dir.
+# option -f is used to create link on already exist file or dir.
+
 
 Y_or_N() {
     printf "%s (y/N): " "$1"
