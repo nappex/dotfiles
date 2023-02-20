@@ -74,5 +74,5 @@ done
 
 
 # INSTALL VIM PLUGINS
-$SCRIPT_DIR_PATH/.vim/install_plugins.sh
+$SCRIPT_DIR_PATH/vim/install_plugins.sh
 
