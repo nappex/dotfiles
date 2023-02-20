@@ -20,29 +20,32 @@ Y_or_N() {
 
 # CONSTANTS
 SCRIPT_DIR_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+CONFIG_HOME=$HOME/.config
 
-# Create symlinks
-
-for dotfile in "${DOTFILES[@]}"; do
-    dst=$HOME/$dotfile
-    # Overwrite existing dotfile to symlink?
-    # overwriting is done by option -Fh as force
-    ln -sFniv $SCRIPT_DIR_PATH/$dotfile $dst
-done
-
-HOME_DOTFILES=(
-    "bash/.bashrc"
-    "zsh/.zshenv"
-    "git/.gitconfig"
-    "aliases/.aliasrc"
+# MAKE SOFT LINKS
+DOTFILES=(
+    "vim"
+    "profile"
+    "bashrc"
+    "aliasrc"
+    "zsh/zshenv"
+    "git/gitconfig"
 )
 
-for dotpath in "${HOME_DOTFILES[@]}"; do
-    dotfile="$(cut -d '/' -f 2 <<<"$dotpath")"
-    dst=$HOME/"$dotfile"
-    # Overwrite existing dotfile to symlink?
-    # overwriting is done by option -Fh as force
-    ln -sFniv $SCRIPT_DIR_PATH/$dotpath $dst
+for path in "${DOTFILES[@]}"; do
+    # get filename from path
+    dotfile=$(basename "$path")
+    target=$HOME/."$dotfile"
+    echo $target
+    if [ -e $target ]
+    then
+       Y_or_N "$target exists, overwrite it?" \
+           && ln -sf $SCRIPT_DIR_PATH/$path $target \
+           && echo "Soft link $target created successfully"
+    else
+        ln -s $SCRIPT_DIR_PATH/$path $target \
+            && echo "Soft link $target created successfully"
+    fi
 done
 
 # CONFIG_HOME/zsh = ZDOTDIR in .zshenv, dont forget any change to update .zshenv
@@ -53,11 +56,20 @@ CONFIG_DOTFILES=(
     "git/ignore"
 )
 
-for dotpath in "${CONFIG_DOTFILES[@]}"; do
-    dst=$CONFIG_HOME/$dotpath
-    path=$CONFIG_HOME/"$(sed -e's:[^/]*$::' <<<"$dotpath")"
-    # overwriting is done by option -Fh as force
-    mkdir -vp "$path" && ln -sFniv $SCRIPT_DIR_PATH/$dotpath $dst
+for path in "${CONFIG_DOTFILES[@]}"; do
+    # get dirname and make path to ~/.config/<dirname>
+    target_dirpath=$CONFIG_HOME/"$(dirname "$path")"
+    target=$CONFIG_HOME/$path
+    if [ -e $target ]
+    then
+       Y_or_N "$target exists, overwrite it?" \
+           && ln -sf $SCRIPT_DIR_PATH/$path $target \
+           && echo "Soft link to $target created successfully"
+    else
+        mkdir -p "$target_dirpath" \
+            && ln -s $SCRIPT_DIR_PATH/$path $target \
+            && echo "Soft link to $target created successfully"
+    fi
 done
 
 
