@@ -37,8 +37,8 @@ for path in "${DOTFILES[@]}"; do
     # get filename from path
     dotfile=$(basename "$path")
     target=$HOME/."$dotfile"
-    echo $target
-    if [ -e $target ]
+
+    if [ -e $target ] || [ -h $target ]
     then
        Y_or_N "$target exists, overwrite it?" \
            && ln -sfn $SCRIPT_DIR_PATH/$path $target \
@@ -61,7 +61,8 @@ for path in "${CONFIG_DOTFILES[@]}"; do
     # get dirname and make path to ~/.config/<dirname>
     target_dirpath=$CONFIG_HOME/"$(dirname "$path")"
     target=$CONFIG_HOME/$path
-    if [ -e $target ]
+
+    if [ -e $target ] || [ -h $target ]
     then
        Y_or_N "$target exists, overwrite it?" \
            && ln -sfn $SCRIPT_DIR_PATH/$path $target \
