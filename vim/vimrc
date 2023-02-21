@@ -22,7 +22,7 @@ set showmode
 set incsearch
 set hls
 set clipboard=unnamed
-set scrolloff=10
+set scrolloff=3
 set sidescroll=5
 set listchars=space:·
 set list
