@@ -54,7 +54,6 @@ done
 CONFIG_DOTFILES=(
     "zsh/.zshrc"
     "zsh/.zprofile"
-    "git/ignore"
 )
 
 for path in "${CONFIG_DOTFILES[@]}"; do
@@ -74,6 +73,21 @@ for path in "${CONFIG_DOTFILES[@]}"; do
     fi
 done
 
+#COPY
+# ignore file is platform specific the base is copied rest must be fill by platform
+source=$SCRIPT_DIR_PATH/git/ignore
+target=$CONFIG_HOME/git/ignore
+if [ -e $target ] || [ -h $target ]
+then
+# cp: command not found
+    Y_or_N "$target exists, overwrite it?" \
+    && rm "$target" \
+    && cp "$source" "$target" \
+    && echo "$source copied to $target"
+else
+    cp "$source" "$target" \
+    && echo "$source copied to $target"
+fi
 
 # INSTALL VIM PLUGINS
 $SCRIPT_DIR_PATH/vim/install_plugins.sh
