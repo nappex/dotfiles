@@ -4,6 +4,7 @@
 # option -s for soft link is used to be able to create link
 # to directory. Hard link invoke an error in case of dir.
 # option -f is used to create link on already exist file or dir.
+# option -n to not descend to directory, should be compatible
 
 
 # FUNCTIONS
@@ -40,7 +41,7 @@ for path in "${DOTFILES[@]}"; do
     if [ -e $target ]
     then
        Y_or_N "$target exists, overwrite it?" \
-           && ln -sf $SCRIPT_DIR_PATH/$path $target \
+           && ln -sfn $SCRIPT_DIR_PATH/$path $target \
            && echo "Soft link $target created successfully"
     else
         ln -s $SCRIPT_DIR_PATH/$path $target \
@@ -63,7 +64,7 @@ for path in "${CONFIG_DOTFILES[@]}"; do
     if [ -e $target ]
     then
        Y_or_N "$target exists, overwrite it?" \
-           && ln -sf $SCRIPT_DIR_PATH/$path $target \
+           && ln -sfn $SCRIPT_DIR_PATH/$path $target \
            && echo "Soft link to $target created successfully"
     else
         mkdir -p "$target_dirpath" \
