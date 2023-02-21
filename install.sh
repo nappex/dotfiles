@@ -65,12 +65,12 @@ for path in "${CONFIG_DOTFILES[@]}"; do
     if [ -e $target ] || [ -h $target ]
     then
        Y_or_N "$target exists, overwrite it?" \
-           && ln -sfn $SCRIPT_DIR_PATH/$path $target \
-           && echo "Soft link to $target created successfully"
+       && ln -sfn $SCRIPT_DIR_PATH/$path $target \
+       && echo "Soft link to $target created successfully"
     else
         mkdir -p "$target_dirpath" \
-            && ln -s $SCRIPT_DIR_PATH/$path $target \
-            && echo "Soft link to $target created successfully"
+        && ln -s $SCRIPT_DIR_PATH/$path $target \
+        && echo "Soft link to $target created successfully"
     fi
 done
 
