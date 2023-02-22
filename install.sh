@@ -82,7 +82,7 @@ then
 # cp: command not found
     Y_or_N "$target exists, overwrite it?" \
     && rm "$target" \
-    && cp "$source" "$target" \
+    && cp "$source" "$target" \
     && echo "$source copied to $target"
 else
     cp "$source" "$target" \
