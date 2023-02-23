@@ -74,19 +74,23 @@ colorscheme PaperColor
 " statusline created just with vim syntax without external plugin
 set laststatus=2 "   to show status line
 set statusline=
-set statusline+=%1*\ [%n]                "  Buffer number
-set statusline+=\ %*
-set statusline+=\ %f\ 
+" %n - Buffer number
+set statusline+=%1*[%n]
+" %f - filepath in buffer relative to current directory
+set statusline+=\ %f\ %*
+" %m %r %h %w - modified, read, help, preview (flags)
 set statusline+=%2*\%m%r%h%w%*
+" %= - separate right and left parts
 set statusline+=%=
-set statusline+=%3*%{gitbranch#name()}%*
+set statusline+=%3*λ:%{gitbranch#name()}%*
 set statusline+=\ %y
 set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
 set statusline+=\ [%{&fileformat}\]
 set statusline+=\ %l:%c
 set statusline+=\ (%p%%)
 
-highlight User1 ctermbg=yellow guibg=yellow ctermfg=black guifg=black
+" User1 is %1*<highlighted_item>%* in statusline
+highlight User1 ctermbg=darkyellow guibg=darkyellow ctermfg=black guifg=black cterm=bold
 highlight User2 ctermbg=red guibg=red
 highlight User3 ctermbg=lightgreen guibg=lightgreen ctermfg=red guifg=red
 
