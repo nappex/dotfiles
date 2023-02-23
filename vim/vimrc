@@ -109,18 +109,6 @@ nnoremap <S-Tab> <<
 inoremap <S-Tab> <C-d>
 
 
-" +------------------------------+
-" |HIGHLIGHT TRAILING WHITESPACES|
-" +------------------------------+
-
-highlight TrailingWhitespace ctermbg=red guibg=red
-autocmd ColorScheme * highlight TrailingWhitespace ctermbg=red guibg=red
-" Show trailing whitespace regex \s\+$
-call matchadd("TrailingWhitespace", '\s\+$')
-autocmd BufWinEnter * call matchadd("TrailingWhitespace", '\s\+$')
-autocmd BufWinLeave * call clearmatches()
-
-
 " +---------------------------+
 " |REMOVE TRAILING WHITESPACES|
 " +---------------------------+
@@ -165,4 +153,31 @@ func Eatchar(pat)
 endfunc
 " autocomplete for a tag
 autocmd FileType html iabbrev <a <a href=<C-v>"<C-v>"></<C-R>=Eatchar('\s')<CR>
+
+
+" +---------------------+
+" |HIGHLIGHT WHITESPACES|
+" +---------------------+
+" Trailing White Spaces
+""highlight TrailWhiteSpaces ctermbg=red guibg=red
+" is should be enough to define highlight group by solution above without
+" autocmd
+""autocmd ColorScheme * highlight TrailWhiteSpaces ctermbg=red guibg=red
+" Show trailing whitespace regex \s\+$
+""call matchadd("TrailWhiteSpaces", '\s\+$')
+""autocmd BufWinEnter * call matchadd("TrailingWhitespace", '\s\+$')
+
+" No-Break Space
+""highlight NoBreakSpaces ctermbg=red guibg=red
+""call matchadd("NoBreakSpaces", ' \+')
+""autocmd BufWinEnter * call matchadd("NoBreakSpaces", ' \+')
+" clear all matches
+""autocmd BufWinLeave * call clearmatches()
+
+" simplier solution but perhaps not so versatile as above with buffers etc.
+" if problem occurs try solution above
+highlight TrailWhiteSpaces ctermbg=red guibg=red
+match TrailWhiteSpaces /\s\+$/
+highlight NoBreakSpaces ctermbg=red guibg=red
+2match NoBreakSpaces / \+/
 
