@@ -177,7 +177,7 @@ autocmd FileType html iabbrev <a <a href=<C-v>"<C-v>"></<C-R>=Eatchar('\s')<CR>
 " simplier solution but perhaps not so versatile as above with buffers etc.
 " if problem occurs try solution above
 highlight TrailWhiteSpaces ctermbg=red guibg=red
-match TrailWhiteSpaces /\s\+$/
-highlight NoBreakSpaces ctermbg=red guibg=red
+match TrailWhiteSpaces /\s\+ *$/
+highlight NoBreakSpaces ctermbg=brown guibg=brown
 2match NoBreakSpaces / \+/
 
