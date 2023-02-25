@@ -1,5 +1,5 @@
 # +--------------+
-# |SIMPLE aliases|
+# |SIMPLE aliases|
 # +--------------+
 
 # GIT
@@ -26,8 +26,8 @@ alias gss='git status -s'
 alias gst='git status'
 alias gsw='git switch'
 
-# +--------------+
-# |GLOBAL aliases|
+# +--------------+
+# |GLOBAL aliases|
 # +--------------+
 
 alias -g gp='grep --color=auto'
