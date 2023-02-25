@@ -1,8 +1,8 @@
 #!/bin/sh
 
-SCRIPT_DIR_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
+SCRIPT_DIR_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit ; pwd -P )"
 
-PLUGINS_PATH=$SCRIPT_DIR_PATH/pack
+PLUGINS_PATH="$SCRIPT_DIR_PATH"/pack
 
 # STATUSLINE
 # if [[ ! -d $PLUGINS_PATH/statusline/start/lightline ]]
@@ -23,28 +23,31 @@ PLUGINS_PATH=$SCRIPT_DIR_PATH/pack
 # |INSTALLATION OF PLUGINS|
 # +-----------------------+
 
-if [[ ! -d $PLUGINS_PATH/colors/start/papercolor-theme ]]
+if [ ! -d "$PLUGINS_PATH"/colors/start/papercolor-theme ]
 then
-    git clone https://github.com/NLKNguyen/papercolor-theme.git ~/.vim/pack/colors/start/papercolor-theme \
-        && echo "Vim plugin -> 'papercolor-theme' installed"
+    git clone https://github.com/NLKNguyen/papercolor-theme.git \
+        "$PLUGINS_PATH"/colors/start/papercolor-theme \
+    && echo "Vim plugin -> 'papercolor-theme' installed"
 else
     echo "Vim plugin -> 'papercolor-theme' already installed"
 fi
 
 # GIT-BRANCH
-if [[ ! -d $PLUGINS_PATH/gitbranch/start/vim-gitbranch ]]
+if [ ! -d "$PLUGINS_PATH"/gitbranch/start/vim-gitbranch ]
 then
-    git clone https://github.com/itchyny/vim-gitbranch $PLUGINS_PATH/gitbranch/start/vim-gitbranch \
-        && echo "Vim plugin -> 'vim-gitbranch' installed"
+    git clone https://github.com/itchyny/vim-gitbranch \
+        "$PLUGINS_PATH"/gitbranch/start/vim-gitbranch \
+    && echo "Vim plugin -> 'vim-gitbranch' installed"
 else
     echo "Vim plugin -> 'vim-gitbranch' already installed"
 fi
 
 # SYNTAX HIGHLIGHTS
-if [[ ! -d $PLUGINS_PATH/hls-syntax/start/vim-polyglot ]]
+if [ ! -d "$PLUGINS_PATH"/hls-syntax/start/vim-polyglot ]
 then
-    git clone --depth 1 https://github.com/sheerun/vim-polyglot ~/.vim/pack/hls-syntax/start/vim-polyglot \
-        && echo "Vim plugin -> 'vim-polyglot' installed"
+    git clone --depth 1 https://github.com/sheerun/vim-polyglot \
+        "$PLUGINS_PATH"/hls-syntax/start/vim-polyglot \
+    && echo "Vim plugin -> 'vim-polyglot' installed"
 else
     echo "Vim plugin -> 'vim-polyglot' already installed"
 fi
