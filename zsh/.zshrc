@@ -25,8 +25,8 @@ bindkey -e
 # `.' is the traditional Bourne and Korn shell name, however
 
 # -r FILE: True if the file exists and is readable
-if [[ -r ~/.aliasrc ]]; then
-    . ~/.aliasrc
+if [[ -r "$HOME"/.config/aliasrc ]]; then
+    . "$HOME"/.config/aliasrc
 fi
 
 # +----------------+

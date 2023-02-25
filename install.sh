@@ -24,7 +24,7 @@ SCRIPT_DIR_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 CONFIG_HOME=$HOME/.config
 
 # MAKE SOFT LINKS
-set -- vim profile bashrc aliasrc zsh/zshenv git/gitconfig
+set -- vim profile bashrc zsh/zshenv git/gitconfig
 
 for path in "$@"
 do
@@ -45,7 +45,7 @@ do
 done
 
 # CONFIG_HOME/zsh = ZDOTDIR in .zshenv, dont forget any change to update .zshenv
-set -- zsh/.zshrc zsh/.zprofile
+set -- zsh/.zshrc zsh/.zprofile aliasrc
 
 for path in "$@"
 do
