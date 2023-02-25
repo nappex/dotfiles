@@ -68,17 +68,23 @@ done
 
 #COPY
 # ignore file is platform specific the base is copied rest must be fill by platform
-source=$SCRIPT_DIR_PATH/git/ignore
-target=$CONFIG_HOME/git/ignore
-if [ -e "$target" ] || [ -h "$target" ]
+source="$SCRIPT_DIR_PATH"/git/ignore
+target_dir="$CONFIG_HOME"/git/
+target_file="$CONFIG_HOME"/git/ignore
+if [ -e "$target_file" ] || [ -h "$target_file" ]
 then
-    Y_or_N "$target exists, overwrite it?" \
-    && rm "$target" \
-    && cp "$source" "$target" \
-    && echo "$source copied to $target"
+    Y_or_N "$target_file exists, overwrite it?" \
+    && rm "$target_file" \
+    && cp "$source" "$target_file" \
+    && echo "$source copied to $target_file"
 else
-    cp "$source" "$target" \
-    && echo "$source copied to $target"
+    if [ ! -d "$target_dir" ]
+    then
+        mkdir -p "$target_dir"
+    fi
+
+    cp "$source" "$target_file" \
+    && echo "$source copied to $target_file"
 fi
 
 # INSTALL VIM PLUGINS
