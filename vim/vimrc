@@ -163,25 +163,34 @@ autocmd FileType html iabbrev <a <a href=<C-v>"<C-v>"></<C-R>=Eatchar('\s')<CR>
 " |HIGHLIGHT WHITESPACES|
 " +---------------------+
 " Trailing White Spaces
-""highlight TrailWhiteSpaces ctermbg=red guibg=red
-" is should be enough to define highlight group by solution above without
-" autocmd
-""autocmd ColorScheme * highlight TrailWhiteSpaces ctermbg=red guibg=red
-" Show trailing whitespace regex \s\+$
-""call matchadd("TrailWhiteSpaces", '\s\+$')
-""autocmd BufWinEnter * call matchadd("TrailingWhitespace", '\s\+$')
+highlight TrailWhiteSpaces ctermbg=red guibg=red
+" is could be enough to define highlight group by solution above without
+" autocmd. But if you use autocmd, it will not work without specification
+" highlight group before autocmd.
+" I am not sure why autocmd is used must be explored more.
+autocmd ColorScheme * highlight TrailWhiteSpaces ctermbg=red guibg=red
+" Show trailing whitespaces regex \s\+$, also show spaces if ends with nbps
+call matchadd("TrailWhiteSpaces", '\s\+ *$')
+" when you invoke further windows with :vsp etc. it is needed to
+" add autocmd Buf commands to ensure highlight working in new windows
+autocmd BufWinEnter * call matchadd("TrailWhiteSpaces", '\s\+ *$')
 
 " No-Break Space
-""highlight NoBreakSpaces ctermbg=red guibg=red
-""call matchadd("NoBreakSpaces", ' \+')
-""autocmd BufWinEnter * call matchadd("NoBreakSpaces", ' \+')
+highlight NoBreakSpaces ctermbg=brown guibg=brown
+autocmd ColorScheme * highlight NoBreakSpaces ctermbg=brown guibg=brown
+call matchadd("NoBreakSpaces", ' ')
+autocmd BufWinEnter * call matchadd("NoBreakSpaces", ' ')
 " clear all matches
-""autocmd BufWinLeave * call clearmatches()
+autocmd BufWinLeave * call clearmatches()
 
 " simplier solution but perhaps not so versatile as above with buffers etc.
 " if problem occurs try solution above
-highlight TrailWhiteSpaces ctermbg=red guibg=red
-match TrailWhiteSpaces /\s\+ *$/
-highlight NoBreakSpaces ctermbg=brown guibg=brown
-2match NoBreakSpaces / \+/
+" and problem occured - when I open a new file with cmd :vsp highlighting
+" stop working in the file opened with :vsp
+""highlight TrailWhiteSpaces ctermbg=red guibg=red
+""autocmd ColorScheme * highlight TrailWhiteSpaces ctermbg=red guibg=red
+""match TrailWhiteSpaces /\s\+ *$/
+""highlight NoBreakSpaces ctermbg=brown guibg=brown
+""autocmd ColorScheme * highlight NoBreakSpaces ctermbg=brown guibg=brown
+""2match NoBreakSpaces / \+/
 
