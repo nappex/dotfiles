@@ -16,7 +16,7 @@ bindkey -e
 # +-------+
 
 # Load aliases from file
-# https://zsh.sourceforge.io/Guide/zshguide02.html#l22
+# https://zsh.sourceforge.io/Guide/zshguide02.html#l22
 # https://zsh.sourceforge.io/Guide/zshguide03.html#l41
 #
 # checks if there is a readable file ~/.aliasrc, and if there is,
@@ -25,7 +25,8 @@ bindkey -e
 # `.' is the traditional Bourne and Korn shell name, however
 
 # -r FILE: True if the file exists and is readable
-if [[ -r "$HOME"/.config/aliasrc ]]; then
+if [[ -r "$HOME"/.config/aliasrc ]]
+then
     . "$HOME"/.config/aliasrc
 fi
 
