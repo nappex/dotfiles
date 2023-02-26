@@ -26,9 +26,3 @@ alias gss='git status -s'
 alias gst='git status'
 alias gsw='git switch'
 
-# +--------------+
-# |GLOBAL aliases|
-# +--------------+
-
-alias -g gp='grep --color=auto'
-
