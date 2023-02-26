@@ -25,10 +25,7 @@ bindkey -e
 # `.' is the traditional Bourne and Korn shell name, however
 
 # -r FILE: True if the file exists and is readable
-if [ -r "$HOME"/.config/aliasrc ]
-then
-    . "$HOME"/.config/aliasrc
-fi
+[ -r "$HOME"/.config/aliasrc ] && . "$HOME"/.config/aliasrc
 
 # +----------------+
 # |CUSTOMIZE PROMPT|
@@ -47,7 +44,7 @@ prompt_git_status () {
 setopt prompt_subst # If set, parameter expansion, command substitution and arithmetic expansion are performed in prompts
 autoload -Uz vcs_info # enable vcs_info (version control system - info)
 zstyle ':vcs_info:*' enable git
-# :vcs_info:vcs-string:user-context:repo-root-name -> format from documentation
+# :vcs_info:vcs-string:user-context:repo-root-name -> format from documentation
 zstyle ':vcs_info:git:*' formats ' %F{yellow}λ:%f%F{magenta}%b%f' # set the style (look) of vcs_info, it should be λ:main
 zstyle ':vcs_info:git:*' use-simple true
 zstyle ':vcs_info:*+*:*' debug false # If you need debug behaviour of vcs_info switch to true
