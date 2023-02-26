@@ -27,6 +27,13 @@ bindkey -e
 # -r FILE: True if the file exists and is readable
 [ -r "$HOME"/.config/aliasrc ] && . "$HOME"/.config/aliasrc
 
+# +--------------+
+# |SUFFIX aliases|
+# +--------------+
+
+alias -s json=geany
+alias -s py=vim
+
 # +----------------+
 # |CUSTOMIZE PROMPT|
 # +----------------+
