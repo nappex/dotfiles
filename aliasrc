@@ -32,10 +32,3 @@ alias gsw='git switch'
 
 alias -g gp='grep --color=auto'
 
-# +--------------+
-# |SUFFIX aliases|
-# +--------------+
-
-alias -s json=geany
-alias -s py=vim
-
