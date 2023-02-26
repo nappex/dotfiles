@@ -10,5 +10,9 @@ parse_git_branch() {
      git branch --show-current 2> /dev/null
 }
 
-export PS1="\[\e[92m\]\u@\h \[\e[96m\]\w \[\e[31m\] λ:\$(parse_git_branch)\[\e[00m\]\n$ "
+_PS1_GREEN="\[\e[92m\]" # set fg color of prompt text to green
+_PS1_BLUE="\[\e[96m\]" # set fg color of prompt text to blue
+_PS1_RED="\[\e[31m\]" # set fg color of prompt text to red
+_PS1_RESET="\[\e[00m\]" # reset prompt color
+export PS1="$_PS1_GREEN\u@\h$_PS1_RESET:$_PS1_BLUE\w$_PS1_RESET $_PS1_REDλ:\$(parse_git_branch)$_PS1_RESET\n$ "
 
