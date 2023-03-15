@@ -64,7 +64,8 @@ let g:is_posix=1
 " +------+
 
 set background=dark
-colorscheme PaperColor
+" there are built-in colorschemes run :colo and TAB to show them
+colorscheme torte
 
 
 " +-----------+
