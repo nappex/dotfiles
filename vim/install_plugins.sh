@@ -23,15 +23,6 @@ PLUGINS_PATH="$SCRIPT_DIR_PATH"/pack
 # |INSTALLATION OF PLUGINS|
 # +-----------------------+
 
-if [ ! -d "$PLUGINS_PATH"/colors/start/papercolor-theme ]
-then
-    git clone https://github.com/NLKNguyen/papercolor-theme.git \
-        "$PLUGINS_PATH"/colors/start/papercolor-theme \
-    && echo "Vim plugin -> 'papercolor-theme' installed"
-else
-    echo "Vim plugin -> 'papercolor-theme' already installed"
-fi
-
 # GIT-BRANCH
 if [ ! -d "$PLUGINS_PATH"/gitbranch/start/vim-gitbranch ]
 then
