@@ -33,6 +33,11 @@ feh --bg-scale -z /home/dastr/Pictures/wallpapers/
 #	/usr/local/bin/openbsd-wallpaper
 #fi
 
+# start ssh-agent for whole session
+# alternatively can be run ssh-agent cwm
+# or generaly ssh-agent <your_window_manager>
+eval $(ssh-agent)
+
 # disable beep in terminal (system)
 xset b off
 
