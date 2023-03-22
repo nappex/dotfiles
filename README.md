@@ -63,6 +63,18 @@ don't specify both of them will be installed.
 ## Vim
 More information about vim configuration find [here](.vim/README.md)
 
+## SSH
+
+There is configuration file for ssh. This file is not copied by installation script because
+configuration is privacy and really personal thing. This file is just an example of github usage.
+SSH config file should be located at `~/.ssh/config`. The `ssh-agent` must be running,
+otherwise you will have to prompt password everytime. For more information check man pages
+`ssh_config`.
+You do not have to handle `ssh-add` command to add your key to `ssh-agent` if ssh config file
+is used. It has advantage of writing password just when you use the key. Adding itself by `ssh-add`
+needs the password.
+
+
 ## Zsh
 
 If you want to try ZSH without any configuration invoke `zsh -f`, option `-f` means option NO_RCS.
