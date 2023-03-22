@@ -1,0 +1,80 @@
+# snap windows to edges at 4 pixels distance
+snapdist 4
+
+# BORDERS
+borderwidth 2
+color activeborder grey
+color inactiveborder black
+
+# set font for menus (after mouse click) - Xft(3) font
+fontname "fixed:pixelsize=15:bold"
+
+# KEYBINDINGS
+
+# remove all default keybindings, uncomment when you will be sure
+# unbind-key all
+
+# Lock screen - by default it is"xlock"
+bind-key 4-l lock
+
+# Terminal window - by default it is "xterm"
+bind-key 4-Return terminal
+
+# WINDOWS
+# mod + q = close current window
+bind-key 4-q window-close
+
+# mod + f = toggle maximize current window
+bind-key 4-f window-maximize
+# mod + shift + f = toggle fullscreen current window
+bind-key 4S-f window-fullscreen
+# mod + '=' = maximize window in vertical direction only
+bind-key 4-equal window-vmaximize
+# mod + shift + '=' = maximize window in horizontal direction only
+bind-key 4S-equal window-hmaximize
+# mod + Left = window is placed on the left of the screen, vertically maximized
+# and horizontally resized to half of screen by default
+# Tw
+bind-key 4-Left window-vtile
+# mod + Up = window is placed at the top of the screen, horizontally maximized
+# and vertically resized to half of screen by default
+bind-key 4-Up window-htile
+
+# GROUPS
+
+# enable sticky to automatically add new window to current group
+sticky yes
+
+# mod + $N = show only windows for group $N
+# you can think of this as switching to virtual desktop $N
+bind-key 4-1 group-only-1
+bind-key 4-2 group-only-2
+bind-key 4-3 group-only-3
+bind-key 4-4 group-only-4
+bind-key 4-5 group-only-5
+bind-key 4-6 group-only-6
+bind-key 4-7 group-only-7
+bind-key 4-8 group-only-8
+bind-key 4-9 group-only-9
+
+# mod + shift + $N = move window to group $N
+bind-key 4S-1 window-movetogroup-1
+bind-key 4S-2 window-movetogroup-2
+bind-key 4S-3 window-movetogroup-3
+bind-key 4S-4 window-movetogroup-4
+bind-key 4S-5 window-movetogroup-5
+bind-key 4S-6 window-movetogroup-6
+bind-key 4S-7 window-movetogroup-7
+bind-key 4S-8 window-movetogroup-8
+bind-key 4S-9 window-movetogroup-9
+
+# RELOAD & LOGOUT
+# mod + shift + r = restart cwm, reload configuration (.cwmrc)
+bind-key 4S-r restart
+
+# mod + shift + q = logout from session
+bind-key 4S-q quit
+
+# invoke dmenu search box
+bind-key 4-space "dmenu_run -fn monospace:size=13"
+
