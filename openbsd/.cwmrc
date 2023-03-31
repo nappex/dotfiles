@@ -8,8 +8,12 @@ snapdist 4
 
 # BORDERS
 borderwidth 2
-color activeborder grey
-color inactiveborder black
+color activeborder "#50FA7B"
+color inactiveborder "#21222C"
+color menubg "#282A36"
+color menufg "#50FA7B"
+color font "#F8F8F2"
+color selfont "#282A36"
 
 # set font for menus (after mouse click) - Xft(3) font
 fontname "fixed:pixelsize=15:bold"
