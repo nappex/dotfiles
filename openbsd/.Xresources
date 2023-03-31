@@ -86,3 +86,9 @@ XTerm*vt100.translations: #override \n\
 	Ctrl <Key> plus: larger-vt-font() \n\
 	Ctrl <Key> 0: set-vt-font(d)
 
+! options adviced by hack font, to not have problems with font rendering
+Xft.antialias: 1
+Xft.hinting: 1
+Xft.rgba: rgb
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault
