@@ -36,7 +36,7 @@ XTerm*rightScrollBar: true
 
 ! ===== Fonts
 XTerm*renderFont: true
-XTerm*faceName: DejaVu Sans Mono
+XTerm*faceName: DejaVu Sans Mono Nerd Font Complete
 XTerm*faceSize: 12
 
 ! ===== Xterm colors
