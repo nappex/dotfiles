@@ -8,7 +8,7 @@
 ! and leave it there for one second.
 !XIdle*delay    : 1
 ! also lock screen after 5 minutes idle
-XIdle*timeout  : 300
+XIdle*timeout: 300
 
 
 ! ===== xterm
