@@ -16,7 +16,10 @@ xrdb -merge $HOME/.Xresources
 xidle &
 
 # Set background color
-xsetroot -solid dimgray
+xsetroot -solid '#4C566A' # or dimgray
+
+# status bar
+polybar top &
 
 # WALLPAPERS
 # set backgroud pictures as wallpaper
