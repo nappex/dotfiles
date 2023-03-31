@@ -1,3 +1,8 @@
+# status bar
+ignore polybar
+# gap for status bar
+gap 30 0 0 0
+
 # snap windows to edges at 4 pixels distance
 snapdist 4
 
