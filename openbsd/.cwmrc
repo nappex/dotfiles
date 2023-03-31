@@ -16,7 +16,7 @@ color font "#F8F8F2"
 color selfont "#282A36"
 
 # set font for menus (after mouse click) - Xft(3) font
-fontname "fixed:pixelsize=15:bold"
+fontname "DejaVu Sans Mono Nerd Font Complete:size=12:bold"
 
 # KEYBINDINGS
 
