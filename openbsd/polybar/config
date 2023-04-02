@@ -30,7 +30,7 @@ font-0 = Hack Nerd Font Mono:size=10;3
 font-1 = Hack Nerd Font Mono:size=18;3
 
 modules-left = xworkspaces xwindow
-modules-right = volume wireless-network battery datetime
+modules-right = wired-network microphone speaker backlight cpu-temp wireless-network kbdlayout battery datetime
 
 [module/xworkspaces]
 type = internal/xworkspaces
@@ -71,10 +71,15 @@ type = custom/script
 exec = $HOME/scripts/polybar-modules.sh datetime
 interval = 30
 
-[module/volume]
+[module/microphone]
 type = custom/script
-exec = $HOME/scripts/polybar-modules.sh volume
-interval = 30
+exec = $HOME/scripts/polybar-modules.sh microphone
+interval = 5
+
+[module/speaker]
+type = custom/script
+exec = $HOME/scripts/polybar-modules.sh speaker
+interval = 5
 
 [module/battery]
 type = custom/script
@@ -83,6 +88,26 @@ interval = 20
 
 [module/wireless-network]
 type = custom/script
-exec = $HOME/scripts/polybar-modules.sh wireless
+exec = $HOME/scripts/polybar-modules.sh wifi
 interval = 20
+
+[module/wired-network]
+type = custom/script
+exec = $HOME/scripts/polybar-modules.sh ethernet
+interval = 20
+
+[module/kbdlayout]
+type = custom/script
+exec = $HOME/scripts/polybar-modules.sh kbdlayout
+interval = 20
+
+[module/cpu-temp]
+type = custom/script
+exec = $HOME/scripts/polybar-modules.sh cpu_temp
+interval = 20
+
+[module/backlight]
+type = custom/script
+exec = $HOME/scripts/polybar-modules.sh backlight
+interval = 10
 
