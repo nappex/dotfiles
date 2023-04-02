@@ -62,9 +62,10 @@ let g:is_posix=1
 " +------+
 " |COLORS|
 " +------+
-
+" Vim try to use colors which should look good in dark scheme
 set background=dark
-colorscheme PaperColor
+" there are built-in colorschemes run :colo and TAB to show them
+colorscheme slate
 
 
 " +-----------+
