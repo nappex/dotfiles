@@ -18,8 +18,7 @@ xidle &
 # Set background color
 xsetroot -solid '#4C566A' # or dimgray
 
-# status bar
-polybar top &
+xrandr --output default --dpi 96
 
 # WALLPAPERS
 # set backgroud pictures as wallpaper
@@ -33,7 +32,7 @@ feh --bg-scale -z /home/dastr/Pictures/wallpapers/
 #
 #if test -x /usr/local/bin/openbsd-wallpaper
 #then
-#	/usr/local/bin/openbsd-wallpaper
+#/usr/local/bin/openbsd-wallpaper
 #fi
 
 # start ssh-agent for whole session
@@ -44,7 +43,9 @@ eval $(ssh-agent)
 # disable beep in terminal (system)
 xset b off
 
-xrandr --output default --dpi 96
+# status bar
+# must be last command before cwm
+polybar top &
 
 # Start certain window manager (cwm, dwm, fvwm)
 cwm
