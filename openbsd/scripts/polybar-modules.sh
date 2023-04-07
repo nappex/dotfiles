@@ -20,7 +20,7 @@ set -A _cpu_t "%{F$_green}" "%{F$_orange}" "%{F$_red}"
 set -A _spkr "󰕿" "󰖀" "󰕾" # 奄奔墳
 
 # get name of driver
-_wlan_nic=$(ifconfig wlan 2>/dev/null | grep -o -E "^[a-z]+0")
+_wlan_nic=$(ifconfig wlan 2>/dev/null | grep -o -E "^[a-z]+[0-9]")
 # get is status in ifconfig interface is active
 _wlan_active=$(ifconfig wlan 2>/dev/null | grep "status: active")
 
