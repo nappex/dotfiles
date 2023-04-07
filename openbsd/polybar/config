@@ -1,7 +1,7 @@
 [colors]
 bg = #151515
 fg = #FFFFFF
-green = #50FA7B
+hilite = #50FA7B
 
 [settings]
 # Reload when the screen configuration changes (XCB_RANDR_SCREEN_CHANGE_NOTIFY event)
@@ -48,7 +48,7 @@ icon-9 = nine;9
 # from version 3.6 try %nwin%
 label-active = %icon%
 label-active-foreground = ${colors.bg}
-label-active-background = ${colors.green}
+label-active-background = ${colors.hilite}
 label-active-padding = 2
 
 label-occupied = %icon%
