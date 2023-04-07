@@ -28,7 +28,7 @@ _wlan_active=$(ifconfig wlan 2>/dev/null | grep "status: active")
 
 function microphone {
     level=$(sndioctl -n input.level | awk '{ print int($0*100) '})
-    if [ $(sndioctl -n input.mute) -eq 0 ] || [ $level -eq 0 ]
+    if [ $(sndioctl -n input.mute) -eq 1 ] || [ $level -eq 0 ]
     then
         printf "%s" "%{T2}%{T-}" # old icon -()
     else
@@ -38,7 +38,7 @@ function microphone {
 
 function speaker {
     level=$(sndioctl -n output.level | awk '{ print int($0*100) '})
-    if [ $(sndioctl -n output.mute) -eq 0 ] || [ $level -eq 0 ]
+    if [ $(sndioctl -n output.mute) -eq 1 ] || [ $level -eq 0 ]
     then
         printf "%s" "%{T2}婢%{T-}"
     else
