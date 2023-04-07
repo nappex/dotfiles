@@ -1,7 +1,7 @@
 #!/bin/ksh
 
 
-SCRIPT_DIR_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
+SCRIPT_DIR_PATH="$(dirname "$(realpath "$0")")"
 
 _blue="#3333FF"
 _green="#69FF94"
