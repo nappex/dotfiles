@@ -45,7 +45,7 @@ do
 done
 
 # CONFIG_HOME/zsh = ZDOTDIR in .zshenv, dont forget any change to update .zshenv
-set -- zsh/.zshrc zsh/.zprofile aliasrc nvim/init.lua
+set -- zsh/.zshrc zsh/.zprofile aliasrc nvim
 
 for path in "$@"
 do
