@@ -8,7 +8,6 @@ set number relativenumber
 set belloff=all
 set encoding=utf-8
 set autoindent
-" Expand TAB to spaces
 set expandtab
 set tabstop=4
 set softtabstop=4

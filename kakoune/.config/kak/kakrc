@@ -1,0 +1,5 @@
+# Numbering lines - relative
+add-highlighter global/ number-lines -relative
+
+# Add morei info to your actions, good when you are learning
+set -add global autoinfo normal
