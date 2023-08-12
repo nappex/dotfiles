@@ -51,6 +51,15 @@ then
     echo "$profile_content" >>"$HOME/.profile"
 fi
 
+# SSH CONFIG
+ssh_config_content=$(cat "$SCRIPT_DIR_PATH/ssh/config")
+if ! grep -q "$ssh_config_content" "$HOME/.ssh/config" >/dev/null
+then
+    echo "Write path to your private ssh github key: " && read -r GTH_key_path
+    echo "$ssh_config_content" \
+        | sed "s|<private_key_path>|${GTH_key_path}|" >>"$HOME/.ssh/config"
+fi
+
 # MAKE SOFT LINKS
 set -- vim bashrc zsh/zshenv git/gitconfig
 
