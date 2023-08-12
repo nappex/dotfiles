@@ -42,8 +42,17 @@ fi
 SCRIPT_DIR_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 CONFIG_HOME=$HOME/.config
 
+# .profile
+# we have to check if the information is not already in file
+# we dont want to make symlink because profile is on all system different
+profile_content=$(cat "$SCRIPT_DIR_PATH/profile")
+if ! grep -q "$profile_content" "$HOME/.profile" >/dev/null
+then
+    echo "$profile_content" >>"$HOME/.profile"
+fi
+
 # MAKE SOFT LINKS
-set -- vim profile bashrc zsh/zshenv git/gitconfig
+set -- vim bashrc zsh/zshenv git/gitconfig
 
 for path in "$@"
 do
