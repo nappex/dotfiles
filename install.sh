@@ -19,6 +19,25 @@ Y_or_N() {
     fi
 }
 
+# Test if all dotfiles has already installed particular program
+PACKAGES_INSTALLED=0
+set -- vim bash zsh git nvim kak helix
+
+for package in "$@"
+do
+    if ! $(type $package >/dev/null)
+    then
+        echo You should install $package before continue
+        PACKAGES_INSTALLED=1
+    fi
+done
+
+if [ $PACKAGES_INSTALLED -eq 1 ]
+then
+    Y_or_N "Do you want to exit to install missing packages?" \
+    && exit 1
+fi
+
 # CONSTANTS
 SCRIPT_DIR_PATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 || exit; pwd -P )"
 CONFIG_HOME=$HOME/.config
