@@ -127,3 +127,12 @@ fi
 # INSTALL VIM PLUGINS
 "$SCRIPT_DIR_PATH"/vim/install_plugins.sh
 
+# Install OpenBSD specific stuff
+if [ $(uname) = "OpenBSD" ]
+then
+    echo "OpenBSD OS detected"
+    echo "Installation of OpenBSD stuff starting..."
+    sleep 1
+    #"$SCRIPT_DIR_PATH"/openbsd/install.sh
+fi
+
