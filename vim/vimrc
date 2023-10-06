@@ -54,6 +54,8 @@ filetype on
 filetype plugin on
 " Load an indent file for the detected file type.
 filetype indent on
+" Enable Omnicomplete features
+set omnifunc=syntaxcomplete#Complete
 autocmd FileType python set omnifunc=python3complete#Complete
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 " to handle newer syntax of bash. e.g. $()
