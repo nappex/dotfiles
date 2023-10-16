@@ -9,6 +9,13 @@
 unsetopt multios
 setopt autocd
 
+# ZSH by default does not used comments in interactive shells
+# this causing problems when you want to use comment in ineractive shell
+# to save that command
+# If you use ';', '||' or other, the command continue a can caused unreverse
+# damage. I enable interactive comment bacuse it is expected behaviour
+setopt interactivecomments
+
 bindkey -e
 
 # +-------+
