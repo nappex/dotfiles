@@ -23,7 +23,7 @@ xrandr --output default --dpi 96
 # WALLPAPERS
 # set backgroud pictures as wallpaper
 # with feh
-feh --bg-scale -z /home/dastr/Pictures/wallpapers/
+feh --bg-scale -z /home/dastr/pictures/wallpapers/
 
 # or
 #  install package openbsd-backgrounds
