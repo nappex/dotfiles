@@ -48,5 +48,5 @@ xset b off
 polybar top &
 
 # Start certain window manager (cwm, dwm, fvwm)
-cwm
+cwm -c $HOME/.config/cwm/.cwmrc
 
