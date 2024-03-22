@@ -48,7 +48,7 @@ syspatch
 # switch back to user with exit
 exit
 
-doas pkg_add -l ../packages_list
+doas pkg_add -l ../packages
 
 # Europe/Prague does not work for me I have plus two hours
 doas ln -sf /usr/share/zoneinfo/UTC /etc/localtime
@@ -57,26 +57,38 @@ echo "Run '\$man afterboot'"
 echo "Hit Enter when you read it all"
 read
 
-# activate tap to click on your laptop
-# For this session only
-doas wsconsctl mouse.tp.tapping=1
+# MOUSE SETTINGS
+# ##############
 
+# TAP TO CLICK
+# enable for current session
+doas wsconsctl mouse.tp.tapping=1
 # If you want to keep tap to click persitent
 echo "mouse.tp.tapping=1" | doas tee -a /etc/wsconsctl.conf
+
+# NATURAL SCROLLING (REVERSE)
+# enable for current session
+doas wsconsctl mouse.reverse_scrolling=1
+# keep the setting persistent
+echo "mouse.reverse_scrolling=1" | doas tee -a /etc/wsconsctl.conf
+
+# FAN SETTING
+# ##########
 
 # OpenBSD in version 7.1 had problem with fan noise
 # solene% solve this by commands below
 # https://dataswamp.org/~solene/2022-04-21-openbsd-71-fan-noise-temperature.html
-pkg_add obsdfreqd
+# Must be installed obsdfreqd package from packages
 rcctl ls on | grep ^apmd && rcctl set apmd flags -L && rcctl restart apmd
 doas rcctl enable obsdfreqd
 doas rcctl start obsdfreqd
 
 # enable microphone for current session
-doas sysctl kern.audio.record=1
+#doas sysctl kern.audio.record=1
 
+# ENABLE MICROPHONE
 # enable microphone permanently
-echo "kern.audio.record=1" | doas tee /etc/sysctl.conf
+#echo "kern.audio.record=1" | doas tee /etc/sysctl.conf
 
 # you can try out your microphone working with
 # $ aucat -o test.wav
@@ -85,15 +97,18 @@ echo "kern.audio.record=1" | doas tee /etc/sysctl.conf
 # To listen you record
 #  $ aucat -i test.wav
 
+
+# ENABLE VIDEO, THE CAMERA
 # enable video(camera) for current session
-doas sysctl kern.video.record=1
+#doas sysctl kern.video.record=1
 
 # enable video(camera) permanently
-echo "kern.video.record=1" | doas tee /etc/sysctl.conf
+#echo "kern.video.record=1" | doas tee /etc/sysctl.conf
 
 # allow user to use video
-doas chown $USER /dev/video0
+#doas chown $USER /dev/video0
 
+# DEFAULT VOLUME LEVELS
 # set default volume levels for micrphone and audio output
 # audio output
 echo "outputs.master=230,230" >>/etc/mixerctl.conf
