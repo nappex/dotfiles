@@ -32,3 +32,5 @@ sysclean--
 tor-browser--
 vim--gtk3-perl-python3-ruby
 zsh--
+luakit--
+mutt--
