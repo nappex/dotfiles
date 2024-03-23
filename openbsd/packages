@@ -9,14 +9,16 @@ fff--
 firefox--
 gcc--%11
 git--
-got--
 gitwrapper--
+got--
 gtk+3--
 gtk+3-cups--
 gtk4-update-icon-cache--
 helix--
 htop--
 keepassxc--
+luakit--
+mutt--
 neofetch--
 nmap--
 obsdfreqd--
@@ -33,5 +35,3 @@ sysclean--
 tor-browser--
 vim--gtk3-perl-python3-ruby
 zsh--
-luakit--
-mutt--
