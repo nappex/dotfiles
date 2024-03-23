@@ -2,8 +2,8 @@
 
 ##Let's switch some monitors
 ##
-## Run "xrandr" to find out the specific designations of your particular layout. For me  
-## it's "eHDMI-2" and "HDMI-2". You can use the search and replace feature of your text editor to
+## Run "xrandr" to find out the specific designations of your particular layout. For me
+	## it's "eHDMI-2" and "HDMI-2". You can use the search and replace feature of your text editor to
 ## change the below script. Or choose (x) from the script to find your correct settings.
 ##
 
@@ -42,7 +42,7 @@ if ! [ -x "$(command -v xrandr)" ]; then
 fi
 
 echo ""
-read -n 1 -p " == Which monitor Configuration do you want? == 
+read -n 1 -p " == Which monitor Configuration do you want? ==
 1=Laptop Only
 2=Laptop and external, mirrored
 3=Laptop and external to the right
