@@ -1,0 +1,4 @@
+ignore termbar
+autogroup 0 termbar
+(...)
+gap 30 0 0 0
