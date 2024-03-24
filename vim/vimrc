@@ -21,7 +21,8 @@ set showcmd
 set showmode
 set incsearch
 set hls
-set clipboard=unnamed
+" Enable to copy text from vim to system clipboard
+set clipboard=unnamedplus
 set scrolloff=3
 set sidescroll=5
 set listchars=space:·,nbsp:␣
