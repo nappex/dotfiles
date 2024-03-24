@@ -1,4 +1,8 @@
 " Vim run command file
+" FONTS PROBLEM
+" If you have problem with font or icons, try solve problem with
+" terminal settings. Vim takes font for itself from terminal
+" these two parts (Vim, terminal emulator) are connected for fonts.
 
 " +-------+
 " |OPTIONS|

@@ -1,4 +1,6 @@
 ! Lines below can be added to .Xdefaults instead of .Xresources if you want
+! Check the right name for fonts, if the name is wrong icons has not to work
+! properly
 
 ! ~/scripts/termbar inside xterm(1)
 termbar*faceName: CodeNewRoman Nerd Font:style=Bold:size=13
