@@ -2,11 +2,10 @@ adwaita-icon-theme--
 arp-scan--
 bash--
 chromium--
-codenewroman-nerd-fonts-3.0.2
-dejavusansmono-nerd-fonts-3.0.2
+codenewroman-nerd-fonts--
+dejavusansmono-nerd-fonts--
 elixir--
 erlang--%25
-fantasquesansmono-nerd-fonts-3.0.2
 feh--
 fff--
 firefox--
@@ -24,11 +23,9 @@ luakit--
 mutt--
 neofetch--
 nmap--
-noto-nerd-fonts-3.0.2
 obsdfreqd--
 openbsd-backgrounds--
 openscad--
-profont-nerd-fonts-3.0.2
 pstree--
 qcad--
 qtbase--
@@ -37,9 +34,6 @@ qtx11extras--
 quirks--
 ranger--
 sysclean--
-terminus-nerd-fonts-3.0.2
 tor-browser--
-ubuntu-nerd-fonts-3.0.2
-ubuntumono-nerd-fonts-3.0.2
 vim--gtk3-perl-python3-ruby
 zsh--
