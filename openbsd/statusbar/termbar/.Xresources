@@ -1,0 +1,11 @@
+! Lines below can be added to .Xdefaults instead of .Xresources if you want
+
+! ~/scripts/termbar inside xterm(1)
+termbar*faceName: CodeNewRoman Nerd Font:style=Bold:size=13
+termbar*geometry: 1920x1+0+0
+termbar*internalBorder: 6
+termbar*saveLines: 0
+termbar*scrollBar: false
+termbar*title: termbar
+termbar*foreground: #D8DEE9
+termbar*background: #4C566A
