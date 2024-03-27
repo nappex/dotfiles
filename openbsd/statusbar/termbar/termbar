@@ -33,6 +33,11 @@ function backlight {
     printf " %.0f%%" "$(xbacklight -get)"
 }
 
+function kbdlayout {
+    setxkbmap -query | \
+    awk '/^layout:/ { printf "󰌌 %s", toupper($2) }'
+}
+
 function cpu {
   echo -n "󰓅 $(sysctl -n hw.setperf)% "
   echo -n " $(sysctl -n hw.sensors.cpu0.temp0 | cut -d '.' -f 1)°C"
@@ -72,7 +77,7 @@ tput civis # Hide cursor
 
 while true; do
   _l="$(grp) $(win)"
-  _r="$(backlight) $(cpu) $(bat) $(net) $(vol) $(cal)"
+  _r="$(backlight) $(kbdlayout) $(cpu) $(bat) $(net) $(vol) $(cal)"
 
   #tput clear cup 1 0
   tput cup 1 0
