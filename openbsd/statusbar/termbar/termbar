@@ -3,9 +3,9 @@
 trap 'exec $0' HUP # Restart itself
 trap 'tput cnorm; exit 1' INT QUIT TERM
 
-_norm="\033[39m"
-_alrt="\033[31m"
-_warn="\033[33m"
+_norm="\033[39m" # default OS color??
+_alrt="\033[31m" # RED
+_warn="\033[33m" # YELLOW
 _rset="\033[0m"
 _hide="\033[2m"
 
