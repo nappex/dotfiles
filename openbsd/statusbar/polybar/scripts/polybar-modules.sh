@@ -1,5 +1,6 @@
 #!/bin/ksh
 
+# script contains special formattings syntax of polybar
 
 SCRIPT_DIR_PATH="$(dirname "$(realpath "$0")")"
 
