@@ -6,11 +6,12 @@ trap 'tput cnorm; exit 1' INT QUIT TERM
 _norm="\033[39m" # default OS color??
 _alrt="\033[31m" # RED
 _warn="\033[33m" # YELLOW
+_green="\033[32m" # GREEN
 _rset="\033[0m"
 _hide="\033[2m"
 
 set -A _bat "${_norm}󰁹" "${_warn}󰁾" "${_alrt}󰁺"
-set -A _pwr "${_norm}󰂄"
+set -A _pwr "${_green}󰂄"
 set -A _net "󰈀" "󰖩"
 set -A _nic "em0" "iwm0"
 set -A _vol "󰕿" "󰖀" "󰕾"
