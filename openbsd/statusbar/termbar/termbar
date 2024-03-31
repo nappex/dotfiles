@@ -17,7 +17,8 @@ set -A _nic "em0" "iwm0"
 set -A _vol "󰕿" "󰖀" "󰕾"
 
 function bat {
-  [[ $(apm -a) -eq 1 ]] \ # battery is charging? 1 = charging from AC adapter
+  # 1 = charging from AC adapter
+  [[ $(apm -a) -eq 1 ]] \
     && echo -n "${_pwr[0]} " \
     || echo -n "${_bat[$(apm -b)]} " # if not charging select icon on percentage level of battery
   echo -n "$(apm -l)%${_norm}"
