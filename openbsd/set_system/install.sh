@@ -119,3 +119,39 @@ echo "record.volume=230,230" >>/etc/mixerctl.conf
 # you can also change settings dynamically by your needs with sndioctl
 # example: sndioctl input.level+=0.5
 # or sndioctl output.level=0.9
+
+# Add RESOURCES, especially web browers are really hungry for
+# resources today.
+# The configuration below is taken from c0ffee.net blog
+# update /etc/login.conf staff paragraph
+staff:\
+	:datasize-cur=1536M:\
+	:datasize-max=8192M:\
+	:maxproc-cur=512:\
+	:maxproc-max=1024:\
+	:openfiles-cur=4096:\
+	:openfiles-max=8192:\
+	:stacksize-cur=32M:\
+	:ignorenologin:\
+	:requirehome@:\
+	:tc=default:
+
+# other resources should be added to sysctl
+# the value below are from c0ffee.net blog
+# /etc/sysctl.conf
+
+# shared memory limits (chrome needs a ton)
+echo "kern.shminfo.shmall=1048576" | doas tee /etc/sysctl.conf
+echo "kern.shminfo.shmmax=536870912" | doas tee /etc/sysctl.conf
+echo "kern.shminfo.shmmni=512" | doas tee /etc/sysctl.conf
+
+# semaphores (continue of adding resources)
+echo "kern.shminfo.shmseg=512" | doas tee /etc/sysctl.conf
+echo "kern.seminfo.semmns=1024" | doas tee /etc/sysctl.conf
+echo "kern.seminfo.semmni=256" | doas tee /etc/sysctl.conf
+
+echo "kern.maxproc=8192" | doas tee /etc/sysctl.conf
+echo "kern.maxfiles=32768" | doas tee /etc/sysctl.conf
+echo "kern.bufcachepercent=60" | doas tee /etc/sysctl.conf
+echo "kern.maxvnodes=214438" | doas tee /etc/sysctl.conf
+echo "kern.somaxconn=512" | doas tee /etc/sysctl.conf
