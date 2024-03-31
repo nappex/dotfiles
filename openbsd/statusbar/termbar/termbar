@@ -28,7 +28,7 @@ function cal {
   [[ $(date "+%H") -ge 6 && $(date "+%H") -le 22 ]] \
     && echo -n "${_norm}" \
     || echo -n "${_warn}"
-  echo -n $(date '+%a %d %b %H:%M')${_norm}
+  echo -n $(date '+%a %d.%m. %H:%M')${_norm}
 }
 
 function backlight {
