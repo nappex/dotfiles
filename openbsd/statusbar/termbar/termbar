@@ -24,13 +24,6 @@ function bat {
   echo -n "$(apm -l)%${_norm}"
 }
 
-function cal {
-  [[ $(date "+%H") -ge 6 && $(date "+%H") -le 22 ]] \
-    && echo -n "${_norm}" \
-    || echo -n "${_warn}"
-  echo -n $(date '+%a %d.%m. %H:%M')${_norm}
-}
-
 function backlight {
     printf " %.0f%%" "$(xbacklight -get)"
 }
@@ -69,6 +62,13 @@ function vol {
   echo -n "$_v%"
 }
 
+function clock {
+  [[ $(date "+%H") -ge 6 && $(date "+%H") -le 22 ]] \
+    && echo -n "${_norm}" \
+    || echo -n "${_warn}"
+  echo -n $(date '+%a %d.%m. %H:%M')${_norm}
+}
+
 function win {
   _wid=$(xprop -root 32x '\t$0' _NET_ACTIVE_WINDOW | cut -f 2)
   _win=$(xprop -id $_wid '\t$0' _NET_WM_NAME | awk -F '"' '{ print $2 }')
@@ -81,7 +81,7 @@ TERMBAR_WIDTH=$(tput cols)
 
 while true; do
   _left="$(grp) $(win)"
-  _middle="$(cal)"
+  _middle="$(clock)"
   _right="$(cpu) $(backlight) $(kbdlayout) $(vol) $(net) $(bat)"
 
   # tput clear cup 1 0
