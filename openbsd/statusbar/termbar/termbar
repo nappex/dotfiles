@@ -64,9 +64,9 @@ function clock {
 }
 
 function win {
-  _wid=$(xprop -root 32x '\t$0' _NET_ACTIVE_WINDOW | cut -f 2)
-  _win=$(xprop -id $_wid '\t$0' _NET_WM_NAME | awk -F '"' '{ print $2 }')
-  echo -n " ${_win}"
+  _w_id=$(xprop -root 32x '\t$0' _NET_ACTIVE_WINDOW | cut -f 2)
+  _w_name=$(xprop -id $_w_id '\t$0' _NET_WM_NAME | awk -F '"' '{ print $2 }')
+  echo -n " ${_w_name}"
 }
 
 function grp {
