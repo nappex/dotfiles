@@ -38,12 +38,6 @@ function cpu {
   echo -n " $(sysctl -n hw.sensors.cpu0.temp0 | cut -d '.' -f 1)°C" # temperature
 }
 
-function grp {
-  echo -n "${_hide}[ "
-  echo -n "$(xprop -root 32c '\t$0' _NET_CURRENT_DESKTOP | cut -f 2)"
-  echo -n " ]${_rset}"
-}
-
 function net {
   [[ -z "$(ifconfig ${_nic[0]} | grep 'status: no carrier')" ]] \
     && (echo -n ${_net[0]} ; return)
@@ -73,6 +67,12 @@ function win {
   _wid=$(xprop -root 32x '\t$0' _NET_ACTIVE_WINDOW | cut -f 2)
   _win=$(xprop -id $_wid '\t$0' _NET_WM_NAME | awk -F '"' '{ print $2 }')
   echo -n " ${_win}"
+}
+
+function grp {
+  echo -n "${_hide}[ "
+  echo -n "$(xprop -root 32c '\t$0' _NET_CURRENT_DESKTOP | cut -f 2)"
+  echo -n " ]${_rset}"
 }
 
 tput civis # Hide cursor
