@@ -92,3 +92,16 @@ Xft.hinting: 1
 Xft.rgba: rgb
 Xft.hintstyle: hintslight
 Xft.lcdfilter: lcddefault
+
+! TERMBAR
+!! ~/scripts/termbar inside xterm(1)
+termbar*faceName: CodeNewRoman Nerd Font:style=Bold:size=13
+! WIDTHxHEIGHT+X+Y
+! COLUMNSxROWS+coord_x+coord_y
+termbar*geometry: 191x1+0+0
+termbar*internalBorder: 6
+termbar*saveLines: 0
+termbar*scrollBar: false
+termbar*title: termbar
+termbar*foreground: #D8DEE9
+termbar*background: #4C566A
