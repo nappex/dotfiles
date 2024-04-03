@@ -77,15 +77,37 @@ function win {
 
 tput civis # Hide cursor
 
-while true; do
-  _l="$(grp) $(win)"
-  _r="$(backlight) $(kbdlayout) $(cpu) $(bat) $(net) $(vol) $(cal)"
+TERMBAR_WIDTH=$(tput cols)
 
-  #tput clear cup 1 0
+while true; do
+  _left="$(grp) $(win)"
+  _middle="$(cal)"
+  _right="$(cpu) $(backlight) $(kbdlayout) $(vol) $(net) $(bat)"
+
+  # tput clear cup 1 0
+
+  tput clear
+
+  # PRINTING STATUSBAR
+  ####################
+  # LEFT PART OF STATUSBAR
   tput cup 1 0
-  printf "%-120.120s\r" "$_l"
-  tput cup 1 120
-  printf "%110.110s" "$_r"
+  printf "%-s" "$_left"
+
+  # MIDDLE PART OF STATUSBAR
+  _middle_length=$(echo -n "$_middle" |
+                    sed "s!$(printf '\033')\[[0-9]*m!!g" |
+                    wc -m)
+  tput cup 1 $(( TERMBAR_WIDTH/2 - _middle_length/2 ))
+  printf "%s" "$_middle"
+
+  # RIGHT PART OF STATUSBAR
+  _right_length=$(echo -n "$_right" |
+                    sed "s!$(printf '\033')\[[0-9]*m!!g" |
+                    wc -m)
+  tput cup 1 $(( TERMBAR_WIDTH - _right_length ))
+  printf "%s" "$_right"
+
   sleep 1
 done
 
