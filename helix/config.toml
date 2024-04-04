@@ -3,6 +3,7 @@ theme = "base16_default"
 [editor]
 line-number = "relative"
 true-color = true
+bufferline = "multiple"
 
 [editor.statusline]
 left = ["mode", "spinner"]
