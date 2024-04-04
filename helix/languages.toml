@@ -1,0 +1,4 @@
+[[language]]
+name = "python"
+rulers = [80]
+
