@@ -22,6 +22,7 @@ right = [
 [editor.cursor-shape]
 # change cursor in insert mode to thin pipe
 insert = "bar"
+select = "underline"
 
 [editor.whitespace.render]
 space = "all"
