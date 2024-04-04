@@ -6,10 +6,18 @@ true-color = true
 bufferline = "multiple"
 
 [editor.statusline]
-left = ["mode", "spinner"]
+left = ["mode", "spinner", "read-only-indicator", "file-modification-indicator"]
 center = ["file-name"]
-right = ["diagnostics", "selections", "position", "position-percentage", "file-encoding", "file-line-ending", "file-type"]
-separator = "│"
+right = [
+  "file-type",
+  "version-control",
+  "diagnostics",
+  "file-encoding",
+  "file-line-ending",
+  "selections",
+  "position",
+  "position-percentage",
+]
 
 [editor.cursor-shape]
 # change cursor in insert mode to thin pipe
