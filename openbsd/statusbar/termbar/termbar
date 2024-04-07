@@ -34,8 +34,8 @@ function kbdlayout {
 }
 
 function cpu {
-  echo -n "󰓅 $(sysctl -n hw.setperf)% " # current cpu performance, it shows only 0 or 100%
-  echo -n " $(sysctl -n hw.sensors.cpu0.temp0 | cut -d '.' -f 1)°C" # temperature
+    echo -n "󰓅 $(sysctl -n hw.setperf)% " # current cpu performance, it shows only 0 or 100%
+    echo -n "+$(sysctl -n hw.sensors.cpu0.temp0 | cut -d '.' -f 1)°C" # temperature
 }
 
 function net {
