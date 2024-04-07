@@ -83,6 +83,13 @@ tput civis # Hide cursor
 
 TERMBAR_WIDTH=$(tput cols)
 
+# for my purpose will be middle always almost same
+# to optimize code I calculate it just once and do not
+# put to while loop
+# If you change the content of middle then you should move
+# the calculation to while loop!
+_middle_length=$(get_visual_len "$(clock)")
+
 while true; do
   _left="$(grp) $(win)"
   _middle="$(clock)"
@@ -99,7 +106,7 @@ while true; do
   printf "%-s" "$_left"
 
   # MIDDLE PART OF STATUSBAR
-  _middle_length=$(get_visual_len "$_middle")
+  # _middle_length=$(get_visual_len "$_middle")
   tput cup 1 $(( TERMBAR_WIDTH/2 - _middle_length/2 ))
   printf "%s" "$_middle"
 
