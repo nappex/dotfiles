@@ -75,6 +75,10 @@ function grp {
   echo -n " ]${_rset}"
 }
 
+function get_visual_len {
+    echo -n "$1" | sed "s!$(printf '\033')\[[0-9]*m!!g" | wc -m
+}
+
 tput civis # Hide cursor
 
 TERMBAR_WIDTH=$(tput cols)
@@ -95,16 +99,12 @@ while true; do
   printf "%-s" "$_left"
 
   # MIDDLE PART OF STATUSBAR
-  _middle_length=$(echo -n "$_middle" |
-                    sed "s!$(printf '\033')\[[0-9]*m!!g" |
-                    wc -m)
+  _middle_length=$(get_visual_len "$_middle")
   tput cup 1 $(( TERMBAR_WIDTH/2 - _middle_length/2 ))
   printf "%s" "$_middle"
 
   # RIGHT PART OF STATUSBAR
-  _right_length=$(echo -n "$_right" |
-                    sed "s!$(printf '\033')\[[0-9]*m!!g" |
-                    wc -m)
+  _right_length=$(get_visual_len "$_right")
   tput cup 1 $(( TERMBAR_WIDTH - _right_length ))
   printf "%s" "$_right"
 
