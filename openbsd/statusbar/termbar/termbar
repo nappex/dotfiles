@@ -65,7 +65,10 @@ function clock {
 
 function win {
   _w_id=$(xprop -root 32x '\t$0' _NET_ACTIVE_WINDOW | cut -f 2)
-  _w_name=$(xprop -id $_w_id '\t$0' _NET_WM_NAME | awk -F '"' '{ print $2 }')
+  _w_name=$(xprop -id $_w_id '\t$0' WM_NAME |
+            awk -F '"' '{ print $2 }' |
+            cut -d "-" -f 1
+          )
   echo -n " ${_w_name}"
 }
 
