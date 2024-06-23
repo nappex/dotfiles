@@ -9,6 +9,9 @@ export LANG=en_US.UTF-8
 # specify location of kshrc
 export ENV=$HOME/.config/ksh/.kshrc
 
+# XORG
+setxkbmap -layout "us,cz" -variant "qwerty" -option "grp:switch"
+
 # XRESOURCES
 # load Xresources file
 xrdb -merge $HOME/.Xresources
