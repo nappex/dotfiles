@@ -3,6 +3,7 @@
 
 # ENVIRONMENT VARIABLES
 # use UTF-8 everywhere
+LC_CTYPE="en_US.UTF-8"
 export LANG=en_US.UTF-8
 
 # specify location of kshrc
