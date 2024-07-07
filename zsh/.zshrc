@@ -45,9 +45,9 @@ alias -s py=vim
 # |CUSTOMIZE PROMPT|
 # +----------------+
 
-prompt_git_status () {
+prompt_git_status() {
     local NOT_COMMITED=$( git status --porcelain 2>/dev/null )
-    if [ -z ${NOT_COMMITED} ]
+    if [ -z "$NOT_COMMITED" ]
     then
         STATUS=""
     else
