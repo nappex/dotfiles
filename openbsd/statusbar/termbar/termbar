@@ -6,6 +6,9 @@ trap 'echo ""; exec $0' HUP
 # Reset the terminal on exit
 trap 'tput cnorm; exit 1' INT QUIT TERM
 
+# Get the number of terminal columns = terminal width
+TERMBAR_WIDTH=$(tput cols)
+
 # COLORS shell
 _norm="\033[39m" # default foreground OS color??
 _alrt="\033[31m" # RED
@@ -88,7 +91,6 @@ function get_visual_len {
 
 tput civis # Hide cursor
 
-TERMBAR_WIDTH=$(tput cols)
 
 # for my purpose will be middle always almost same
 # to optimize code I calculate it just once and do not
