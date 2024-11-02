@@ -1,6 +1,6 @@
 #!/bin/ksh
 
-trap 'exec $0' HUP # Restart itself
+trap 'echo ""; exec $0' HUP
 trap 'tput cnorm; exit 1' INT QUIT TERM
 
 _norm="\033[39m" # default OS color??
