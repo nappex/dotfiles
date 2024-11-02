@@ -1,14 +1,18 @@
 #!/bin/ksh
 
+# Restart itself igit get a SIGHUP
 trap 'echo ""; exec $0' HUP
+
+# Reset the terminal on exit
 trap 'tput cnorm; exit 1' INT QUIT TERM
 
-_norm="\033[39m" # default OS color??
+# COLORS shell
+_norm="\033[39m" # default foreground OS color??
 _alrt="\033[31m" # RED
 _warn="\033[33m" # YELLOW
 _green="\033[32m" # GREEN
-_rset="\033[0m"
-_hide="\033[2m"
+_rset="\033[0m" # Reset formatting
+_hide="\033[2m" # Decrease intensity
 
 set -A _bat "${_norm}󰁹" "${_warn}󰁾" "${_alrt}󰁺"
 set -A _pwr "${_green}󰂄"
