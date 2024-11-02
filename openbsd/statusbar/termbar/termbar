@@ -32,17 +32,17 @@ function bat {
 }
 
 function backlight {
-    printf " %.0f%%" "$(xbacklight -get)"
+  printf " %.0f%%" "$(xbacklight -get)"
 }
 
 function kbdlayout {
-    setxkbmap -query | \
-    awk '/^layout:/ { printf "󰌌 %s", toupper($2) }'
+  setxkbmap -query | \
+  awk '/^layout:/ { printf "󰌌 %s", toupper($2) }'
 }
 
 function cpu {
-    echo -n "󰓅 $(sysctl -n hw.setperf)% " # current cpu performance, it shows only 0 or 100%
-    echo -n "+$(sysctl -n hw.sensors.cpu0.temp0 | cut -d '.' -f 1)°C" # temperature
+  echo -n "󰓅 $(sysctl -n hw.setperf)% " # current cpu performance, it shows only 0 or 100%
+  echo -n "+$(sysctl -n hw.sensors.cpu0.temp0 | cut -d '.' -f 1)°C" # temperature
 }
 
 function net {
@@ -86,7 +86,7 @@ function grp {
 }
 
 function get_visual_len {
-    echo -n "$1" | sed "s!$(printf '\033')\[[0-9]*m!!g" | wc -m
+  echo -n "$1" | sed "s!$(printf '\033')\[[0-9]*m!!g" | wc -m
 }
 
 tput civis # Hide cursor
