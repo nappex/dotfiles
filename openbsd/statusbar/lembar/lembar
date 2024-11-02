@@ -1,0 +1,97 @@
+#!/bin/ksh
+
+_cur_width="$(xrandr | grep current | cut -d " " -f 8)"
+
+_font_size="12"
+_font="CodeNewRoman Nerd Font:style=Regular:size=$_font_size"
+
+# COLORS LEMONBAR
+_red="%{F#FF0000}"
+_yellow="%{F#FFFF00}"
+_green="%{F#00FF00}"
+
+set -A _bat "󰁹" "${_yellow}󰁾" "${_red}󰁺"
+set -A _pwr "${_green}󰂄"
+set -A _net "󰈀" "󰖩"
+set -A _nic "em0" "iwm0"
+set -A _vol "󰕿" "󰖀" "󰕾"
+
+function bat {
+  # 1 = charging from AC adapter
+  [[ $(apm -a) -eq 1 ]] \
+    && echo -n "${_pwr[0]}" \
+    || echo -n "${_bat[$(apm -b)]}" # if not charging select icon on percentage level of battery
+  echo -n "$(apm -l)%${_norm}"
+}
+
+function backlight {
+  printf " %.0f%%" "$(xbacklight -get)"
+}
+
+function kbdlayout {
+  setxkbmap -query | \
+  awk '/^layout:/ { printf "󰌌 %s", toupper($2) }'
+}
+
+function cpu {
+  echo -n "󰓅 $(sysctl -n hw.setperf)% " # current cpu performance, it shows only 0 or 100%
+  echo -n "+$(sysctl -n hw.sensors.cpu0.temp0 | cut -d '.' -f 1)°C" # temperature
+}
+
+function net {
+  [[ -z "$(ifconfig ${_nic[0]} | grep 'status: no carrier')" ]] \
+    && (echo -n ${_net[0]} ; return)
+  echo -n $(ifconfig ${_nic[1]} | \
+    awk '/ieee80211:/ { print "󰖩" " " $3 "(" $8 ")" }')
+}
+
+function vol {
+  _v=$(sndioctl -n output.level | awk '{ print int($0*100) '})
+  [[ $(sndioctl -n input.mute) -eq 1 ]] \
+    && echo -n "${_norm}󰍭${_norm} " \
+    || echo -n "${_yellow}󰍮${_norm} "
+  [[ $(sndioctl -n output.mute) -eq 1 ]] \
+    && echo -n "󰖁" \
+    || echo -n "${_vol[$(($_v*3/101))]} "
+  echo -n "$_v%"
+}
+
+function clock {
+  [[ $(date "+%H") -ge 6 && $(date "+%H") -le 22 ]] \
+    && echo -n "${_norm}" \
+    || echo -n "${_yellow}"
+  echo -n $(date '+%a %d.%m. %H:%M')${_norm}
+}
+
+function win {
+  _w_id=$(xprop -root 32x '\t$0' _NET_ACTIVE_WINDOW | cut -f 2)
+  _w_name=$(xprop -id $_w_id '\t$0' WM_NAME |
+            awk -F '"' '{ print $2 }' |
+            cut -d "-" -f 1
+          )
+  echo -n " ${_w_name}"
+}
+
+function grp {
+  echo -n "${_hide}[ "
+  echo -n "$(xprop -root 32c '\t$0' _NET_CURRENT_DESKTOP | cut -f 2)"
+  echo -n " ]${_rset}"
+}
+
+function get_visual_len {
+  echo -n "$1" | sed "s!$(printf '\033')\[[0-9]*m!!g" | wc -m
+}
+
+
+function status_bar {
+  while true; do
+    _left="$(grp) $(win)"
+    _center="$(clock)"
+    _right="$(cpu) $(backlight) $(kbdlayout) $(vol) $(net) $(bat)"
+    echo "%{l}$_left %{c}$_center %{r}$_right"
+    sleep 1
+  done
+}
+
+status_bar | lemonbar-xft -p -f "$_font" -g "$(( _cur_width - 10 ))"x"$(( _font_size*2 ))"+0+0
+
