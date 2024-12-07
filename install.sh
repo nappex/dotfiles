@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 # README
 # option -s for soft link is used to be able to create link
