@@ -21,7 +21,7 @@ Y_or_N() {
 
 # Test if all dotfiles has already installed particular program
 PACKAGES_INSTALLED=0
-set -- vim bash zsh git nvim kak helix
+set -- vim bash zsh git nvim kak helix ghostty
 
 for package in "$@"
 do
@@ -82,7 +82,7 @@ do
 done
 
 # CONFIG_HOME/zsh = ZDOTDIR in .zshenv, dont forget any change to update .zshenv
-set -- zsh/.zshrc zsh/.zprofile aliasrc nvim kak helix/config.toml
+set -- zsh/.zshrc zsh/.zprofile aliasrc nvim kak helix/config.toml ghostty/config
 
 for path in "$@"
 do
