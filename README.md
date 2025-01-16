@@ -74,6 +74,10 @@ You do not have to handle `ssh-add` command to add your key to `ssh-agent` if ss
 is used. It has advantage of writing password just when you use the key. Adding itself by `ssh-add`
 needs the password.
 
+If you are using tty which set `TERM` env variable, you can have a problem with `ssh`.
+`SSH` looks at the var and if the var is not recognized, then `ssh` not work properly.
+That is the reason why you can have a problem with `ghostty`, which set `TERM` to `xterm- ghostty`.
+This type of tty is not recgnized by `ssh`. Solution is to set `TERM` variable to general value `xterm-256color`.
 
 ## Zsh
 
