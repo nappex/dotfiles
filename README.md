@@ -8,14 +8,14 @@ for `zsh`, `bash`, `git`, `vim`.
 
 You should install all applications which are related to dotfiles.
 
-### Debian/Ubuntu
+### Debian/Ubuntu
 
 ```
-sudo apt update && sudo apt upgrade
+sudo apt update && sudo apt upgrade
 sudo apt install vim-gtk zsh bash git
 ```
 
-### Arch
+### Arch
 
 ```
 sudo pacman -Syu
@@ -98,7 +98,7 @@ Path to homebrew is added by default in file `$ZDOTDIR/.zprofile`. If you want t
 - Explore [Official guide](https://zsh.sourceforge.io/Guide/zshguide.html)
 - Some settings are nicely described in this [blog](https://thevaluable.dev/zsh-install-configure-mouseless/)
 
-## Bash
+## Bash
 
 ### Customize Bash prompt
 
@@ -110,5 +110,5 @@ If you'd like to learn how to customize looks of your bash, check links below.
 1. https://tynick.com/blog/06-12-2019/how-to-change-your-ps1-bash-prompt-and-add-emojis/
 2. http://jafrog.com/2013/11/23/colors-in-terminal.html
 
-## Git
+## Git
 
