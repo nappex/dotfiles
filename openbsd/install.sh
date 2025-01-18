@@ -25,6 +25,19 @@ Section "Device"
 EndSection
 END
 
+# install hw accelaration for intel
+intel_CPU="$(sysctl hw.model | grep -i intel | cut -d "=" -f0"")"
+if [ -n "$intel_CPU" ]
+then
+  echo Detected intel CPU $intel_CPU
+  echo You should install vaapi driver with command below
+  echo for intel generation 5th and higher install packages below
+  echo \# pkg_add intel-media-driver libva-utils
+  echo
+  echo for intel generation 4th and lower install packages below
+  echo \# doas pkg_add intel-vaapi-driver libva-utils
+
+fi
 
 # TODO it should check if exist and ask if you want
 # to ovewrite it. That should be done for all below
