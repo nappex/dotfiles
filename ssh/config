@@ -4,3 +4,12 @@ Host *
 Host github.com
   AddKeysToAgent yes
   IdentityFile <private_key_path>
+
+Host socks5
+    HostName <ipaddress>
+    User <username>
+    Port <host_port>
+    DynamicForward <localhost_port>
+    Compression yes
+    SessionType none
+    RequestTTY false
