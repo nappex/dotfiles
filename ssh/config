@@ -1,15 +1,26 @@
 Host *
+  #AddKeysToAgent yes
+  #IgnoreUnknown UseKeychain
+  #IdentityFile <path/to/private/key>
   SetEnv TERM=xterm-256color # if ghostty is used
 
 Host github.com
   AddKeysToAgent yes
   IdentityFile <private_key_path>
 
-Host socks5
-    HostName <ipaddress>
+Host *server_1*
     User <username>
     Port <host_port>
+
+Host *server_1_ipv4
+    HostName <ipv4_address>
+
+Host *server_1_ipv6
+    HostName <ipv6_address>
+
+Host ssh_socks5*
     DynamicForward <localhost_port>
     Compression yes
     SessionType none
     RequestTTY false
+
