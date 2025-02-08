@@ -39,6 +39,9 @@ set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 " Enable mouse using
 set mouse=a
 
+" disable polyglot (or csv.vim) automatic change semicolons delimiter in csv files to
+" pipes (; -> |)
+let g:csv_no_conceal = 1
 
 " +------+
 " |SYNTAX|
