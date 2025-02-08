@@ -39,13 +39,13 @@ set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 " Enable mouse using
 set mouse=a
 
+" disable polyglot (or csv.vim) automatic change semicolons delimiter in csv files to
+" pipes (; -> |)
+let g:csv_no_conceal = 1
 
 " +------+
 " |SYNTAX|
 " +------+
-
-" Enable syntax highlighting
-syntax enable
 " Enables filetype detection, loads ftplugin, and loads indent
 " (Not necessary on nvim and may not be necessary on vim 8.2+)
 " Enable type file detection. Vim will be able to try to detect the type of file is use.
@@ -54,6 +54,11 @@ filetype on
 filetype plugin on
 " Load an indent file for the detected file type.
 filetype indent on
+" Enable syntax highlighting. The syntax option must be after filetype or
+" ERROR: CSV Syntax:Invalid column pattern, using default pattern
+" \%([^,]*,\|$\) is invoked
+syntax enable
+
 " Enable Omnicomplete features
 set omnifunc=syntaxcomplete#Complete
 autocmd FileType python set omnifunc=python3complete#Complete
