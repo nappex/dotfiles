@@ -1,1 +1,7 @@
 font-size = 18
+
+# Disable auto formatting of symbols as == or != (generally, ligatures)
+font-feature = -calt
+font-feature = -liga
+font-feature = -dlig
+
