@@ -25,8 +25,9 @@ set hls
 set clipboard=unnamed
 set scrolloff=3
 set sidescroll=5
-set listchars=space:·,nbsp:␣
+
 set list
+set listchars=lead:·,trail:·,nbsp:␣
 "   Search down in to sub-folders
 "   Providse TAB-completion for all file-related tasks
 set path+=**
