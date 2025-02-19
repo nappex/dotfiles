@@ -26,8 +26,8 @@ set clipboard=unnamed
 set scrolloff=3
 set sidescroll=5
 
-set list
 set listchars=lead:·,trail:·,nbsp:␣
+set list
 "   Search down in to sub-folders
 "   Providse TAB-completion for all file-related tasks
 set path+=**
