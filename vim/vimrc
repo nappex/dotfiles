@@ -9,9 +9,9 @@ set belloff=all
 set encoding=utf-8
 set autoindent
 " Expand TAB to spaces
-"set expandtab
-set tabstop=4
+set expandtab
 set softtabstop=4
+set tabstop=4
 set shiftwidth=4
 set colorcolumn=90
 set encoding=utf-8
@@ -28,9 +28,10 @@ set sidescroll=5
 
 set showbreak=↪\ 
 set list
-set listchars=tab:→\ ,eol:↲,nbsp:␣,lead:·,trail:·,extends:⟩,precedes:⟨
+set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:·,extends:⟩,precedes:⟨
+set listchars+=lead:·
 "   Search down in to sub-folders
-"   Providse TAB-completion for all file-related tasks
+"   Provide TAB-completion for all file-related tasks
 set path+=**
 
 "   Display all matching files when we TAB complete
