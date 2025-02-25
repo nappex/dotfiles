@@ -9,7 +9,7 @@ set belloff=all
 set encoding=utf-8
 set autoindent
 " Expand TAB to spaces
-set expandtab
+"set expandtab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
@@ -26,8 +26,9 @@ set clipboard=unnamed
 set scrolloff=3
 set sidescroll=5
 
-set listchars=lead:·,trail:·,nbsp:␣
+set showbreak=↪\ 
 set list
+set listchars=tab:→\ ,eol:↲,nbsp:␣,lead:·,trail:·,extends:⟩,precedes:⟨
 "   Search down in to sub-folders
 "   Providse TAB-completion for all file-related tasks
 set path+=**
