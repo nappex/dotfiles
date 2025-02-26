@@ -4,7 +4,7 @@ vim.o.tabstop = 4
 vim.o.shiftwidth = 4
 vim.o.swapfile = false
 vim.o.mouse = a
-vim.o.listchars = 'tab:» ,lead:•,trail:•,nbsp:␣'
+vim.o.listchars = 'tab:» ,lead:·,trail:·,nbsp:␣'
 vim.o.list = true
 
 -- termguicolors is false by default, but it is good to know the option exist
