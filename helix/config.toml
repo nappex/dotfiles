@@ -2,6 +2,7 @@ theme = "base16_default"
 
 [editor]
 line-number = "relative"
+auto-format = false
 true-color = true
 bufferline = "multiple"
 
@@ -18,6 +19,11 @@ right = [
   "position",
   "position-percentage",
 ]
+
+[editor.lsp]
+auto-signature-help = false
+display-signature-help-docs = false
+snippets = false
 
 [editor.cursor-shape]
 # change cursor in insert mode to thin pipe
@@ -37,3 +43,7 @@ tab = "→"
 newline = "⏎"
 tabpad = "·" # Tabs will look like "→···" (depending on tab width)
 
+[editor.indent-guides]
+render = true
+character = "┊" # Some characters that work well: "▏", "┆", "┊", "⸽"
+skip-levels = 1
