@@ -16,6 +16,10 @@ setopt autocd
 # damage. I enable interactive comment bacuse it is expected behaviour
 setopt interactivecomments
 
+# exclude command from zsh history if the
+# command is leading by SPACE
+setopt HIST_IGNORE_SPACE
+
 bindkey -e
 
 # +-------+
