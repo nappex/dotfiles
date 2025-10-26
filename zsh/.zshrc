@@ -1,6 +1,19 @@
 # Zsh Run Commnads file
 
+# VARIABLES
+# ---------
+
+NEWLINE=$'\n'
+# RPS1='${vcs_info_msg_0_}' # right side of prompt
+PS1='%F{green}%n%f@%F{green}%m%f:%F{cyan}%~%f${vcs_info_msg_0_}${STATUS}${NEWLINE}%# '
+
+# HISTORY
+HISTFILE=$ZDOTDIR/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+
 # OPTIONS
+# -------
 
 # option multios duplicate streams of file descriptors, if we redirect stdout or
 # stderr we can still pipe these outputs because of their duplication.
@@ -22,9 +35,8 @@ setopt HIST_IGNORE_SPACE
 
 bindkey -e
 
-# +-------+
-# |ALIASES|
-# +-------+
+# ALIASES
+# -------
 
 # Load aliases from file
 # https://zsh.sourceforge.io/Guide/zshguide02.html#l22
@@ -38,16 +50,14 @@ bindkey -e
 # -r FILE: True if the file exists and is readable
 [ -r "$HOME"/.config/aliasrc ] && . "$HOME"/.config/aliasrc
 
-# +--------------+
-# |SUFFIX aliases|
-# +--------------+
+# SUFFIX aliases
+# --------------
 
 alias -s json=geany
 alias -s py=vim
 
-# +----------------+
-# |CUSTOMIZE PROMPT|
-# +----------------+
+# CUSTOMIZE PROMPT
+# ----------------
 
 prompt_git_status() {
     local NOT_COMMITED=$( git status --porcelain 2>/dev/null )
@@ -73,12 +83,7 @@ precmd () {
 #${vcs_info_msg_0_} print this var you will get the result
 
 
-NEWLINE=$'\n'
-# RPS1='${vcs_info_msg_0_}' # right side of prompt
-PS1='%F{green}%n%f@%F{green}%m%f:%F{cyan}%~%f${vcs_info_msg_0_}${STATUS}${NEWLINE}%# '
-
 # The following lines were added by compinstall
-
 zstyle ':completion:*' completer _complete _ignored
 zstyle ':completion:*' expand prefix
 zstyle ':completion:*' squeeze-slashes true
@@ -87,12 +92,4 @@ zstyle :compinstall filename '$ZDOTDIR/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
-
-# +----------------+
-# |COMMANDS HISTORY|
-# +----------------+
-
-HISTFILE=$ZDOTDIR/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
 
